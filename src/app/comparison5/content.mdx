@@ -1,0 +1,147 @@
+This page demonstrates the **power of MDX** - a format that lets you write JSX in Markdown documents. You get the best of both worlds: the simplicity of Markdown for content authoring and the power of React components for interactive elements.
+
+## What Makes MDX Special?
+
+MDX allows content creators to:
+
+- Write content in **familiar Markdown syntax**
+- Embed React components directly in the content
+- Create rich, interactive documentation and landing pages
+- Maintain type safety with TypeScript
+- Leverage the full Next.js ecosystem
+
+> **Pro Tip**: MDX is perfect for documentation sites, blogs, and content-heavy applications where you want to mix static content with interactive components.
+
+## Key Benefits Over Previous Approaches
+
+### 🔄 **Comparison with Previous Pages**
+
+| Feature                 | HTML (comparison1-3) | React Components (comparison4) | **MDX + React (comparison5)** |
+| ----------------------- | -------------------- | ------------------------------ | ----------------------------- |
+| Content Authoring       | Raw HTML             | JSX in components              | **Markdown + JSX**            |
+| Component Reusability   | None                 | ✅ Full                        | ✅ **Enhanced**               |
+| Type Safety             | None                 | ✅ TypeScript                  | ✅ **TypeScript + MDX**       |
+| Content-Code Separation | Limited              | Partial                        | ✅ **Excellent**              |
+| Non-Developer Friendly  | ❌                   | ❌                             | ✅ **Yes!**                   |
+
+### 🚀 **Interactive Features Grid**
+
+Here's our features grid, but now embedded directly in MDX content:
+
+<FeaturesGrid />
+
+### 📝 **Content Authoring Experience**
+
+The beauty of MDX is that **content creators** can focus on writing while **developers** build reusable components. Here's how easy it is to embed components:
+
+```jsx
+// Just write components directly in your content!
+<FeatureCard
+  emoji="✨"
+  title="Amazing Feature"
+  description="This component is embedded in MDX!"
+/>
+```
+
+<InfoBox>
+  **💡 Developer Note**: The component above is rendered using our shared
+  FeatureCard component, but the content creator didn't need to know React -
+  they just used it like a shortcode!
+</InfoBox>
+
+## Advanced MDX Features
+
+### Custom Styled Boxes
+
+<HighlightBox>
+
+### ✨ Highlighted Content
+
+This is a custom styled box that showcases important information. MDX lets you combine Markdown, HTML, and React components seamlessly.
+
+</HighlightBox>
+
+<WarningBox>
+  ⚠️ **Warning**: While MDX is powerful, remember to keep your component API
+  simple for content creators!
+</WarningBox>
+
+<SuccessBox>
+  ✅ **Success**: MDX strikes the perfect balance between developer power and
+  content creator simplicity.
+</SuccessBox>
+
+### Code Examples with Syntax Highlighting
+
+MDX makes it easy to include code examples:
+
+```typescript
+// TypeScript example - fully type-safe MDX components
+import type { MDXComponents } from "mdx/types";
+import { FeatureCard } from "./components/FeatureCard";
+
+export const mdxComponents: MDXComponents = {
+  FeatureCard,
+  // Map HTML elements to custom React components
+  h1: ({ children }) => <h1 className="custom-h1">{children}</h1>,
+};
+```
+
+### Lists and Formatting
+
+You can use all standard Markdown features:
+
+- **Bold text** with `**text**`
+- _Italic text_ with `*text*`
+- `Inline code` with backticks
+- [Links](/) work perfectly
+- And much more!
+
+1. Numbered lists
+2. Work great too
+3. With full styling support
+
+## Real-World Use Cases
+
+MDX is perfect for:
+
+- **Documentation sites** (like Docusaurus, Nextra)
+- **Blog posts** with interactive demos
+- **Landing pages** with rich content (like this one!)
+- **Marketing pages** that need both content and components
+- **Educational content** with embedded examples
+
+<CTA
+  title="Ready to Try MDX?"
+  description="You're experiencing MDX right now! This entire page is written in Markdown with embedded React components. Compare this authoring experience with the previous examples."
+  buttonText="View All Comparisons"
+  buttonHref="/"
+/>
+
+## Technical Implementation
+
+### How This Page Works
+
+1. **Content**: Written in `content.mdx` using Markdown syntax
+2. **Components**: Reused from the shared components directory
+3. **Styling**: Enhanced CSS modules with MDX-specific classes
+4. **Integration**: MDX is processed by Next.js at build time
+5. **Type Safety**: Full TypeScript support for components used in MDX
+
+### Developer Benefits
+
+- **Separation of Concerns**: Content in MDX, logic in React components
+- **Reusability**: Components work in both regular React pages and MDX
+- **Performance**: Static generation with Next.js optimizations
+- **DX**: Great developer experience with hot reloading and TypeScript
+
+### Content Creator Benefits
+
+- **Familiar Syntax**: Just Markdown with occasional component usage
+- **No Build Process**: Content creators don't need to understand React/TypeScript
+- **Preview**: Can see changes immediately with Next.js dev server
+- **Collaboration**: Easy to review content changes in version control
+
+---
+
+**Bottom Line**: MDX gives you the **authoring simplicity of Markdown** with the **power and reusability of React components**. It's the best of both worlds for content-rich applications.
