@@ -1,17 +1,29 @@
+## Goal of this project
+
+To showcase different ways to create a web page so see which we prefer.
+
+## How this project was built
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+```
+npx create-next-app@latest my-landing
+    --ts --eslint --app --src-dir --import-alias "@/*" --use-pnpm
+```
+
+### Options
+
+- **npx** → runs a package without installing it globally.
+- **create-next-app@latest** → downloads the most recent version of the Next.js project generator.
+- **my-landing** → the name of the new folder it will create (your project directory).
+- **--use-pnpm** → use pnpm package manage over npm or yarn`
+
+## Getting started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -20,7 +32,15 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Different web pages
+
+1. [Basic HTML page](http://localhost:3000/html/comparison1.html)
+2. [Basic HTML page with Tailwind CSS](http://localhost:3000/html/comparison2.html)
+3. [Basic HTML page with CSS Modules](http://localhost:3000/html/comparison3.html)
+4. [React components](http://localhost:3000/comparison4)
+5. [React components + MDX](http://localhost:3000/comparison5)
+
+## Learn more
 
 To learn more about Next.js, take a look at the following resources:
 
