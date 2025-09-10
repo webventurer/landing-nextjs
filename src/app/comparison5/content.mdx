@@ -1,5 +1,7 @@
 This page demonstrates the **power of MDX** - a format that lets you write JSX in Markdown documents. You get the best of both worlds: the simplicity of Markdown for content authoring and the power of React components for interactive elements.
 
+**Font Optimization**: This page uses `next/font` to automatically optimize and load multiple Google Fonts: Inter for body text, JetBrains Mono for code, and the modern Poppins for headings - all with automatic font swapping and performance optimizations.
+
 ## What Makes MDX Special?
 
 MDX allows content creators to:
@@ -9,6 +11,7 @@ MDX allows content creators to:
 - Create rich, interactive documentation and landing pages
 - Maintain type safety with TypeScript
 - Leverage the full Next.js ecosystem
+- **Benefit from automatic font optimization** with `next/font`
 
 > **Pro Tip**: MDX is perfect for documentation sites, blogs, and content-heavy applications where you want to mix static content with interactive components.
 
@@ -127,6 +130,47 @@ MDX is perfect for:
 3. **Styling**: Enhanced CSS modules with MDX-specific classes
 4. **Integration**: MDX is processed by Next.js at build time
 5. **Type Safety**: Full TypeScript support for components used in MDX
+6. **Font Optimization**: Uses `next/font` to automatically optimize and load Inter font with zero layout shift
+
+### Font Optimization Features
+
+<InfoBox>
+  **🎨 next/font Benefits**: This page uses `next/font` to automatically
+  optimize and load Inter, providing automatic font swapping, zero layout shift,
+  and improved performance compared to traditional web font loading.
+</InfoBox>
+
+Key font optimization features:
+
+- **Automatic font swapping** with `display: 'swap'`
+- **Zero layout shift** through size calculations
+- **Preloading** for critical fonts
+- **CSS custom properties** for easy theming
+- **TypeScript support** for font configuration
+
+```typescript
+// Font optimization with next/font - Multiple Google Fonts
+import { Inter, JetBrains_Mono, Poppins } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap", // Prevents invisible text during font swap
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
+  weight: ["400", "500", "600", "700"], // Multiple weights for headings
+});
+```
 
 ### Developer Benefits
 
