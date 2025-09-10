@@ -22,6 +22,22 @@ Simply click on each of the links below to see the different versions. We start 
 4. [React components](http://localhost:3000/comparison4)
 5. [React components + MDX](http://localhost:3000/comparison5)
 
+## Thoughts on the implementations
+
+I think it's hands down 5) React components + MDX for the win.
+
+Basic HTML is just too heavy and has too much design clutter.
+
+Tailwind CSS violates the separation of concerns and the HTML becomes unreasable and unmaintanable. The core concept is that "each piece of code should have one reason to change" and with Tailwind CSS you are mixing design logic with content. You just can't read it without getting a headache! So it's out on principle.
+
+CSS Modules is definitely the better option by a long shot, cleanly separating design from content.
+
+React components is a good way to get re-useable blocks of JSX (JavaScript XML) for dynamic content and state management. I like code you write once and use everywhere because you are doing future developer a favour, especially if future developer is YOU!
+
+However, as soon as you add markdown with .mdx files (i.e. markdown + React) components you get easy to read structured code that does something useful.
+
+It's kinda obvious when you see it, hence why I wrote this little project.
+
 ## How this project was built
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
