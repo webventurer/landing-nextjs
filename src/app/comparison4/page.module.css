@@ -1,0 +1,44 @@
+/* Page content styles for comparison4 */
+.contentSection {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: #3498db;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.subSectionTitle {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.featuresList {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.featureItem {
+  margin-bottom: 0.5rem;
+}
+
+.codeBlock {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow: auto;
+  margin-bottom: 1rem;
+}
+
+.codeText {
+  font-size: 0.9rem;
+}

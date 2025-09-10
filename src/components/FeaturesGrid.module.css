@@ -1,0 +1,13 @@
+/* Features grid styles */
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .featuresGrid {
+        grid-template-columns: 1fr;
+    }
+}
