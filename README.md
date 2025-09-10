@@ -2,6 +2,16 @@
 
 In this next.js project we showcase the different ways to create a web page so we can see which approach we prefer.
 
+## Getting started
+
+First, run the development server:
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ## Different web pages
 
 Simply click on each of the links below to see the different versions. We start with basic HTML, add in some Tailwind CSS, then try CSS Modules, React Components and then finally MDX markdown:
@@ -28,20 +38,6 @@ npx create-next-app@latest my-landing
 - **my-landing** → the name of the new folder it will create (your project directory).
 - **--use-pnpm** → use pnpm package manage over npm or yarn`
 
-## Getting started
-
-First, run the development server:
-
-```bash
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
 ## Learn more
 
 To learn more about Next.js, take a look at the following resources:
@@ -56,3 +52,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Resources
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
