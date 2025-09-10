@@ -1,0 +1,76 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Acme Landing</title>
+    <!-- Tailwind via CDN for quick demo only -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="text-slate-800">
+    <header class="max-w-6xl mx-auto px-6 py-12">
+      <nav class="flex justify-between items-center">
+        <div class="font-bold text-xl">Acme</div>
+        <a href="#pricing" class="px-4 py-2 rounded bg-slate-900 text-white">Get started</a>
+      </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6">
+      <!-- Hero -->
+      <section class="py-16">
+        <h1 class="text-4xl font-bold tracking-tight">Launch faster with Acme</h1>
+        <p class="mt-4 text-lg text-slate-600">Simple tools to ship pages in minutes.</p>
+        <div class="mt-8 flex gap-3">
+          <a class="px-5 py-3 rounded bg-slate-900 text-white" href="#pricing">Try it free</a>
+          <a class="px-5 py-3 rounded border border-slate-300" href="#how-it-works">Learn more</a>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="how-it-works" class="py-12 grid md:grid-cols-3 gap-8">
+        <div><h3 class="font-semibold">Markdown first</h3><p class="text-slate-600">Write content quickly.</p></div>
+        <div><h3 class="font-semibold">React ready</h3><p class="text-slate-600">Add components as needed.</p></div>
+        <div><h3 class="font-semibold">Blazing build</h3><p class="text-slate-600">Deploy in seconds.</p></div>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing" class="py-16">
+        <h2 class="text-3xl font-bold">Pricing</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="rounded-xl border p-6">
+            <h3 class="font-semibold">Starter</h3>
+            <p class="mt-2 text-3xl font-bold">€9<span class="text-base font-normal">/mo</span></p>
+            <ul class="mt-4 list-disc pl-5 text-slate-600">
+              <li>1 project</li><li>Email support</li>
+            </ul>
+            <a class="mt-6 inline-block px-4 py-2 rounded bg-slate-900 text-white" href="#">Choose</a>
+          </div>
+
+          <div class="rounded-xl border p-6 border-slate-900 relative">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white px-3 py-1 rounded-full text-xs">Popular</div>
+            <h3 class="font-semibold">Pro</h3>
+            <p class="mt-2 text-3xl font-bold">€29<span class="text-base font-normal">/mo</span></p>
+            <ul class="mt-4 list-disc pl-5 text-slate-600">
+              <li>10 projects</li><li>Priority support</li><li>Advanced analytics</li><li>Custom domains</li>
+            </ul>
+            <a class="mt-6 inline-block px-4 py-2 rounded bg-slate-900 text-white" href="#">Choose</a>
+          </div>
+
+          <div class="rounded-xl border p-6">
+            <h3 class="font-semibold">Enterprise</h3>
+            <p class="mt-2 text-3xl font-bold">€99<span class="text-base font-normal">/mo</span></p>
+            <ul class="mt-4 list-disc pl-5 text-slate-600">
+              <li>Unlimited projects</li><li>24/7 phone support</li><li>White-label options</li><li>API access</li>
+            </ul>
+            <a class="mt-6 inline-block px-4 py-2 rounded bg-slate-900 text-white" href="#">Choose</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="max-w-6xl mx-auto px-6 py-12 text-sm text-slate-500">
+      © Acme
+    </footer>
+  </body>
+</html>
