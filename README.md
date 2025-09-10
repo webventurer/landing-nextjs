@@ -1,6 +1,16 @@
 ## Goal of this project
 
-To showcase different ways to create a web page so see which we prefer.
+In this next.js project we showcase the different ways to create a web page so we can see which approach we prefer.
+
+## Different web pages
+
+Simply click on each of the links below to see the different versions. We start with basic HTML, add in some Tailwind CSS, then try CSS Modules, React Components and then finally MDX markdown:
+
+1. [Basic HTML page](http://localhost:3000/html/comparison1.html)
+2. [Basic HTML page with Tailwind CSS](http://localhost:3000/html/comparison2.html)
+3. [Basic HTML page with CSS Modules](http://localhost:3000/html/comparison3/index.html)
+4. [React components](http://localhost:3000/comparison4)
+5. [React components + MDX](http://localhost:3000/comparison5)
 
 ## How this project was built
 
@@ -31,14 +41,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Different web pages
-
-1. [Basic HTML page](http://localhost:3000/html/comparison1.html)
-2. [Basic HTML page with Tailwind CSS](http://localhost:3000/html/comparison2.html)
-3. [Basic HTML page with CSS Modules](http://localhost:3000/html/comparison3.html)
-4. [React components](http://localhost:3000/comparison4)
-5. [React components + MDX](http://localhost:3000/comparison5)
 
 ## Learn more
 
