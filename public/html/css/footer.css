@@ -1,0 +1,12 @@
+/* Footer component styles */
+.footerContainer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-top: 1px solid #ecf0f1;
+    color: #7f8c8d;
+
+    p {
+        font-size: 0.9rem;
+    }
+}
