@@ -12,6 +12,7 @@ import InfoBox from '../../components/InfoBox';
 import WarningBox from '../../components/WarningBox';
 import SuccessBox from '../../components/SuccessBox';
 import HighlightBox from '../../components/HighlightBox';
+import Section from '@/components/Section';
 
 import MDXContent from './content.mdx';
 
@@ -25,6 +26,7 @@ const components = {
   WarningBox,
   SuccessBox,
   HighlightBox,
+  Section,
   h1: (props: ComponentProps<'h1'>) => <h1 className={pageStyles.h1} {...props} />,
   h2: (props: ComponentProps<'h2'>) => <h2 className={pageStyles.h2} {...props} />,
   h3: (props: ComponentProps<'h3'>) => <h3 className={pageStyles.h3} {...props} />,
