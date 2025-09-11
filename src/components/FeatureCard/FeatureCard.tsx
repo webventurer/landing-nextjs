@@ -1,30 +1,23 @@
 'use client';
 
 import styles from './FeatureCard.module.css';
+import React from 'react';
 
 interface FeatureCardProps {
-  emoji: string;
-  title: string;
-  description: string;
+  children: React.ReactNode;
+  flavour?: string;
 }
 
-export default function FeatureCard({ emoji, title, description }: FeatureCardProps) {
-  const handleClick = () => {
-    console.log(`Feature card clicked: ${emoji} ${title}`);
-  };
+export default function FeatureCard({ children, flavour = 'default' }: FeatureCardProps) {
+  let classes = styles.default;
 
-  const handleMouseEnter = () => {
-    console.log(`Hovering over feature: ${emoji} ${title}`);
-  };
+  if (flavour && flavour !== 'default') {
+    classes += ` ${styles[flavour]}`;
+  }
 
   return (
-    <div
-      className={styles.featureCard}
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-    >
-      <h3>{emoji} {title}</h3>
-      <p>{description}</p>
+    <div className={classes}>
+      {children}
     </div>
   );
 }
