@@ -119,33 +119,6 @@
   margin: 3rem 0;
 }
 
-.warningBox {
-  background-color: #fff3cd;
-  border: 1px solid #ffeaa7;
-  border-left: 4px solid #f39c12;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-}
-
-.successBox {
-  background-color: #d4edda;
-  border: 1px solid #c3e6cb;
-  border-left: 4px solid #28a745;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-}
-
-.infoBox {
-  background-color: #d1ecf1;
-  border: 1px solid #b8daff;
-  border-left: 4px solid #3498db;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-}
-
 /* Table styles for MDX */
 .table {
   width: 100%;
