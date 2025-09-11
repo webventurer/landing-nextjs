@@ -1,10 +1,21 @@
 This page demonstrates the **power of MDX** - a format that lets you write JSX in Markdown documents. You get the best of both worlds: the simplicity of Markdown for content authoring and the power of React components for interactive elements.
 
+**Enhanced Styling**: This page now uses **SCSS (Sass)** for advanced CSS preprocessing, featuring variables, mixins, and nested selectors for better maintainability and organization.
+
 **Font Optimization**: This page uses `next/font` to automatically optimize and load multiple Google Fonts: Inter for body text, JetBrains Mono for code, and the modern Poppins for headings - all with automatic font swapping and performance optimizations.
 
-## What Makes MDX Special?
+## What Makes This Implementation Special?
 
-MDX allows content creators to:
+This page combines multiple powerful technologies:
+
+### 🎨 **SCSS Preprocessing**
+
+- **Variables**: Consistent colors, spacing, and fonts throughout
+- **Mixins**: Reusable styling patterns for headings and code elements
+- **Nesting**: Organized selector hierarchy for complex components like tables
+- **Better Maintainability**: Change design tokens once, update everywhere
+
+### 📝 **MDX Content Authoring**
 
 - Write content in **familiar Markdown syntax**
 - Embed React components directly in the content
@@ -13,19 +24,22 @@ MDX allows content creators to:
 - Leverage the full Next.js ecosystem
 - **Benefit from automatic font optimization** with `next/font`
 
-> **Pro Tip**: MDX is perfect for documentation sites, blogs, and content-heavy applications where you want to mix static content with interactive components.
+> **Pro Tip**: The combination of SCSS + MDX + React components provides the most powerful and maintainable approach for content-heavy applications with complex styling needs.
 
 ## Key Benefits Over Previous Approaches
 
 ### 🔄 **Comparison with Previous Pages**
 
-| Feature                 | HTML (comparison1-3) | React Components (comparison4) | **MDX + React (comparison5)** |
-| ----------------------- | -------------------- | ------------------------------ | ----------------------------- |
-| Content Authoring       | Raw HTML             | JSX in components              | **Markdown + JSX**            |
-| Component Reusability   | None                 | ✅ Full                        | ✅ **Enhanced**               |
-| Type Safety             | None                 | ✅ TypeScript                  | ✅ **TypeScript + MDX**       |
-| Content-Code Separation | Limited              | Partial                        | ✅ **Excellent**              |
-| Non-Developer Friendly  | ❌                   | ❌                             | ✅ **Yes!**                   |
+| Feature                 | HTML (comparison1-3) | React Components (comparison4) | **MDX + React + SCSS (comparison5)** |
+| ----------------------- | -------------------- | ------------------------------ | ------------------------------------ |
+| Content Authoring       | Raw HTML             | JSX in components              | **Markdown + JSX**                   |
+| Styling Approach        | Plain CSS/Tailwind   | CSS Modules                    | **SCSS with variables & mixins**     |
+| Component Reusability   | None                 | ✅ Full                        | ✅ **Enhanced**                      |
+| Style Maintainability   | ❌ Poor              | ✅ Good                        | ✅ **Excellent**                     |
+| Type Safety             | None                 | ✅ TypeScript                  | ✅ **TypeScript + MDX**              |
+| Content-Code Separation | Limited              | Partial                        | ✅ **Excellent**                     |
+| Non-Developer Friendly  | ❌                   | ❌                             | ✅ **Yes!**                          |
+| Design System           | ❌ Inconsistent      | ✅ Moderate                    | ✅ **Comprehensive**                 |
 
 ### 🚀 **Interactive Features Grid**
 
