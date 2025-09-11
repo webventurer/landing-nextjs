@@ -1,18 +1,18 @@
 'use client';
 
-import styles from '../../components/MainContainer.module.css';
+import styles from '../../components/page.module.css';
 import pageStyles from './page.module.scss';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import { MDXProvider } from '@mdx-js/react';
-import FeatureCard from '../../components/FeatureCard';
-import FeaturesGrid from '../../components/FeaturesGrid';
-import CTA from '../../components/CTA';
-import InfoBox from '../../components/InfoBox';
-import WarningBox from '../../components/WarningBox';
-import SuccessBox from '../../components/SuccessBox';
-import HighlightBox from '../../components/HighlightBox';
-import Section from '@/components/Section';
+import FeatureCard from '../../components/FeatureCard/FeatureCard';
+import FeaturesGrid from '../../components/FeaturesGrid/FeaturesGrid';
+import CTA from '../../components/CTA/CTA';
+import InfoBox from '../../components/InfoBox/InfoBox';
+import WarningBox from '../../components/WarningBox/WarningBox';
+import SuccessBox from '../../components/SuccessBox/SuccessBox';
+import HighlightBox from '../../components/HighlightBox/HighlightBox';
+import Section from '@/components/Section/Section';
 
 import MDXContent from './content.mdx';
 

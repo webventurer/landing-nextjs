@@ -1,9 +1,9 @@
-import styles from '../../components/MainContainer.module.css';
+import styles from '../../components/page.module.css';
 import pageStyles from './page.module.css';
-import Header from '../../components/Header';
-import FeaturesGrid from '../../components/FeaturesGrid';
-import CTA from '../../components/CTA';
-import Footer from '../../components/Footer';
+import Header from '../../components/Header/Header';
+import FeaturesGrid from '../../components/FeaturesGrid/FeaturesGrid';
+import CTA from '../../components/CTA/CTA';
+import Footer from '../../components/Footer/Footer';
 
 export const metadata = {
   title: 'React Components Comparison Page',

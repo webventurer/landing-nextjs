@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './FeaturesGrid.module.css';
-import FeatureCard from './FeatureCard';
+import FeatureCard from '../FeatureCard/FeatureCard';
 
 const features = [
   {
