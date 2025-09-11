@@ -36,7 +36,18 @@ React components is a good way to get re-useable blocks of JSX (JavaScript XML) 
 
 However, as soon as you add markdown with .mdx files (i.e. markdown + React) components you get easy to read structured code that does something useful.
 
+Now add in some SCSS support (Sassy CSS). SCSS is a CSS preprocessor - it's an extension of CSS that adds powerful features to make writing styles easier and more maintainable: you can add variables to CSS and nesting where you write styles inside other styles. Or mixins which are reusable blocks of styles.
+
 It's kinda obvious when you see it, hence why I wrote this little project.
+
+### The way forwards
+
+React components + SCSS + CSS Modules gives you everything you need: scoping/isolation & enhanced power using variables, mixins and nesting. It's like creating a visual language with its own encapsulation and programming ability.
+
+All the display code gets shorter and is cleanly separated from the content. Each React component has its namespace with its own styling too. Namespaces & encapsulation for the win!
+
+> Namespaces are one honking great idea -- let's do more of those!
+> — _Tim Peters, The Zen of Python_
 
 ## How this project was built
 
