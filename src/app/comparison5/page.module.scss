@@ -1,0 +1,245 @@
+// SCSS Variables
+$color-primary: #3498db;
+$color-secondary: #2c3e50;
+$color-code: #e74c3c;
+$color-text: #333;
+$color-text-light: #555;
+$color-white: white;
+
+$color-bg-light: #f8f9fa;
+$color-bg-code: #f4f4f4;
+$color-border: #ddd;
+$color-border-light: #e1e8ed;
+
+$font-poppins: var(--font-poppins), sans-serif;
+$font-mono: var(--font-jetbrains-mono), "Monaco", "Menlo", "Ubuntu Mono", monospace;
+
+$spacing-xs: 0.2rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 2.5rem;
+
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+
+$gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+// Mixins
+@mixin heading-base {
+  font-weight: 600;
+  font-family: $font-poppins;
+  color: $color-secondary;
+}
+
+@mixin code-style {
+  font-family: $font-mono;
+  background-color: $color-bg-light;
+  border-radius: $radius-sm;
+}
+
+@mixin box-style($bg-color, $border-color) {
+  padding: $spacing-md $spacing-lg;
+  border-radius: $radius-md;
+  margin: $spacing-lg 0;
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+}
+
+// Main styles
+.content {
+  max-width: none;
+}
+
+// Typography hierarchy
+.h1 {
+  @include heading-base;
+  font-size: 2rem;
+  margin-top: $spacing-xxl;
+  margin-bottom: $spacing-lg;
+  line-height: 1.2;
+}
+
+.h2 {
+  @include heading-base;
+  font-size: 1.5rem;
+  color: $color-primary;
+  margin-top: $spacing-xl;
+  margin-bottom: $spacing-md;
+  line-height: 1.3;
+}
+
+.h3 {
+  @include heading-base;
+  font-size: 1.2rem;
+  margin-top: $spacing-xxl;
+  margin-bottom: $spacing-md;
+  line-height: 1.4;
+}
+
+// Text elements
+.paragraph {
+  margin-bottom: $spacing-md;
+  line-height: 1.6;
+  color: $color-text;
+}
+
+.list {
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-xl;
+}
+
+.listItem {
+  margin-bottom: $spacing-sm;
+  line-height: 1.5;
+}
+
+.strong {
+  font-weight: 600;
+  color: $color-secondary;
+}
+
+// Code elements
+.inlineCode {
+  @include code-style;
+  padding: $spacing-xs 0.4rem;
+  font-size: 0.9em;
+  color: $color-code;
+  border: 1px solid $color-border-light;
+}
+
+.codeBlock {
+  @include code-style;
+  background-color: $color-bg-code;
+  padding: $spacing-md;
+  border-radius: $radius-md;
+  overflow: auto;
+  margin-bottom: $spacing-md;
+  border: 1px solid $color-border;
+  font-size: 0.9rem;
+  line-height: 1.4;
+
+  code {
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+  }
+}
+
+// Blockquote
+.blockquote {
+  border-left: 4px solid $color-primary;
+  margin: $spacing-lg 0;
+  padding: $spacing-md $spacing-lg;
+  background-color: $color-bg-light;
+  border-radius: 0 $radius-md $radius-md 0;
+  font-style: italic;
+  color: $color-text-light;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// Global component spacing
+.content {
+  :global(.featuresGrid) {
+    margin: $spacing-xl 0;
+  }
+
+  :global(.cta) {
+    margin: ($spacing-xl + $spacing-md) 0;
+  }
+}
+
+// Table styles with nesting
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $spacing-lg 0;
+  background-color: $color-white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: $radius-md;
+  overflow: hidden;
+
+  // Responsive
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+}
+
+.tableHeader {
+  background: $gradient-purple;
+  color: $color-white !important;
+  font-weight: 600;
+}
+
+.tableHeaderCell {
+  padding: $spacing-md;
+  text-align: left;
+  font-size: 0.9rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  color: $color-white !important;
+
+  &:last-child {
+    border-right: none;
+    color: $color-white !important;
+  }
+
+  // Ensure all content inside header cells is white
+  *,
+  strong {
+    color: $color-white !important;
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+.tableBody {
+  background-color: $color-white;
+}
+
+.tableRow {
+  border-bottom: 1px solid $color-border-light;
+  transition: background-color 0.2s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// Only apply hover to body rows, not header rows
+.tableBody .tableRow {
+  &:hover {
+    background-color: $color-bg-light;
+  }
+}
+
+.tableCell {
+  padding: $spacing-md;
+  font-size: 0.9rem;
+  border-right: 1px solid $color-border-light;
+  vertical-align: top;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:first-child {
+    font-weight: 600;
+    color: $color-secondary;
+    background-color: $color-bg-light;
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    padding: 0.75rem 0.5rem;
+  }
+}
