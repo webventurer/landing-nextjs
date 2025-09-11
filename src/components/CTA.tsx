@@ -10,10 +10,10 @@ interface CTAProps {
 
 export default function CTA({ title, description, buttonText, buttonHref }: CTAProps) {
   return (
-    <section className={styles.ctaContainer}>
+    <section className={styles.container}>
       <h2>{title}</h2>
       <p>{description}</p>
-      <div className={styles.ctaButtons}>
+      <div className={styles.buttons}>
         <Link href={buttonHref}>
           {buttonText}
         </Link>
