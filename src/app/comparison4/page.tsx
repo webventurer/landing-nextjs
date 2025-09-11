@@ -2,6 +2,7 @@ import styles from '../../components/page.module.css';
 import pageStyles from './page.module.css';
 import Header from '../../components/Header/Header';
 import FeaturesGrid from '../../components/FeaturesGrid/FeaturesGrid';
+import FeatureCard from '../../components/FeatureCard/FeatureCard';
 import CTA from '../../components/CTA/CTA';
 import Footer from '../../components/Footer/Footer';
 
@@ -45,7 +46,38 @@ export default function Comparison4() {
           </p>
         </section>
 
-        <FeaturesGrid />
+        <FeaturesGrid>
+          <FeatureCard
+            emoji="🚀"
+            title="Fast Loading"
+            description="Static HTML loads instantly without any JavaScript frameworks or build processes. Perfect for simple landing pages that need maximum speed."
+          />
+          <FeatureCard
+            emoji="📱"
+            title="Responsive Design"
+            description="CSS Grid and Flexbox ensure this page looks great on all devices, from mobile phones to desktop computers."
+          />
+          <FeatureCard
+            emoji="🎨"
+            title="Modern Styling"
+            description="Clean, modern design with smooth transitions and hover effects using pure CSS without any external dependencies."
+          />
+          <FeatureCard
+            emoji="♿"
+            title="Accessible"
+            description="Semantic HTML structure with proper heading hierarchy and alt text for screen readers and better SEO."
+          />
+          <FeatureCard
+            emoji="🔧"
+            title="Easy to Modify"
+            description="Simple HTML and CSS that any developer can understand and modify without learning complex frameworks."
+          />
+          <FeatureCard
+            emoji="🌐"
+            title="Universal Support"
+            description="Works in every browser, even older ones, without polyfills or transpilation. Maximum compatibility guaranteed."
+          />
+        </FeaturesGrid>
 
         <section className={pageStyles.contentSection}>
           <h3 className={pageStyles.subSectionTitle}>
