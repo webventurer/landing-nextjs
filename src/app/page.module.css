@@ -130,7 +130,11 @@
 
 .highlightBox h3 {
   margin-top: 0;
-  color: white;
+  color: white !important;
+}
+
+.highlightBox * {
+  color: white !important;
 }
 
 .warningBox {
