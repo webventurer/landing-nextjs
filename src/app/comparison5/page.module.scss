@@ -27,6 +27,32 @@ $radius-lg: 12px;
 
 $gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
+// Visual Hierarchy Scale (0-100) - Functional prominence, not just loudness
+// Considers both attention-grabbing AND contextual appropriateness
+$hierarchy-background: 0;      // Page backgrounds, invisible elements
+$hierarchy-subtle: 10;         // Borders, dividers, disabled states
+$hierarchy-supporting: 25;     // Captions, metadata, helper text
+$hierarchy-content: 40;        // Main body text, primary content
+$hierarchy-structure: 60;      // Headings, section labels, navigation
+$hierarchy-emphasis: 75;       // Important content, highlighted text
+$hierarchy-action: 85;         // Primary buttons, main CTAs
+$hierarchy-critical: 100;      // Alerts, errors, hero elements
+
+// Semantic color roles (independent of hierarchy level)
+$color-content-primary: #333;          // Main text
+$color-content-secondary: #666;        // Supporting text
+$color-content-muted: #999;            // Subtle text
+
+// Typography weights mapped to functional roles
+$weight-background: 100;       // Barely visible text
+$weight-subtle: 300;           // Subtle, supporting
+$weight-content: 400;          // Normal reading
+$weight-structure: 500;        // Headings, organization
+$weight-emphasis: 600;         // Important content
+$weight-action: 600;           // Buttons, CTAs
+$weight-critical: 700;         // Alerts, hero text
+
+
 // Mixins
 @mixin heading-base {
   font-weight: 600;
