@@ -1,4 +1,4 @@
-import styles from './SuccessBox.module.css';
+import styles from './SuccessBox.module.scss';
 
 interface SuccessBoxProps {
   children: React.ReactNode;

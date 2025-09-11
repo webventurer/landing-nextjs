@@ -1,4 +1,4 @@
-import styles from './WarningBox.module.css';
+import styles from './WarningBox.module.scss';
 
 interface WarningBoxProps {
   children: React.ReactNode;

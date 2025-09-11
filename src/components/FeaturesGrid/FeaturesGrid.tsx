@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './FeaturesGrid.module.css';
+import styles from './FeaturesGrid.module.scss';
 import FeatureCard from '../FeatureCard/FeatureCard';
 import React from 'react';
 

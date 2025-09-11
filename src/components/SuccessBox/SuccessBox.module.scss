@@ -1,0 +1,23 @@
+// SCSS Variables
+$color-bg: #d4edda;
+$color-border: #c3e6cb;
+$color-border-left: #28a745;
+
+$padding: 1rem 1.5rem;
+$border-radius: 8px;
+$margin: 1.5rem 0;
+$border-left-width: 4px;
+
+// Mixin for success box styling
+@mixin success-box-base($bg-color, $border-color, $accent-color) {
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  border-left: $border-left-width solid $accent-color;
+  padding: $padding;
+  border-radius: $border-radius;
+  margin: $margin;
+}
+
+.successBox {
+  @include success-box-base($color-bg, $color-border, $color-border-left);
+}

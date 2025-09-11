@@ -1,5 +1,5 @@
-import styles from '../../components/page.module.css';
-import pageStyles from './page.module.css';
+import styles from '../../components/page.module.scss';
+import pageStyles from './page.module.scss';
 import Header from '../../components/Header/Header';
 import FeaturesGrid from '../../components/FeaturesGrid/FeaturesGrid';
 import FeatureCard from '../../components/FeatureCard/FeatureCard';

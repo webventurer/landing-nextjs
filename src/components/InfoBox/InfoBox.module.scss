@@ -1,0 +1,23 @@
+// SCSS Variables
+$color-bg: #d1ecf1;
+$color-border: #b8daff;
+$color-border-left: #3498db;
+
+$padding: 1rem 1.5rem;
+$border-radius: 8px;
+$margin: 1.5rem 0;
+$border-left-width: 4px;
+
+// Mixin for info box styling
+@mixin info-box-base($bg-color, $border-color, $accent-color) {
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  border-left: $border-left-width solid $accent-color;
+  padding: $padding;
+  border-radius: $border-radius;
+  margin: $margin;
+}
+
+.infoBox {
+  @include info-box-base($color-bg, $color-border, $color-border-left);
+}

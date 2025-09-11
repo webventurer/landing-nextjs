@@ -1,0 +1,96 @@
+// SCSS Variables
+$color-primary: #3498db;
+$color-text-dark: #555;
+$color-white: white;
+$color-white-transparent: rgba(255, 255, 255, 0.9);
+
+$padding-default: 2rem;
+$padding-compact: 1.2rem;
+
+$border-radius: 8px;
+$box-shadow-default: 0 2px 10px rgba(0, 0, 0, 0.1);
+$box-shadow-highlighted: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+$transform-hover-default: translateY(-5px);
+$transform-hover-highlighted: translateY(-8px);
+
+$gradient-highlighted: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$border-highlighted: 2px solid #4f46e5;
+
+$transition-default: transform 0.3s ease;
+
+// Mixins
+@mixin card-base {
+  background: $color-white;
+  padding: $padding-default;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-default;
+  transition: $transition-default;
+  cursor: pointer;
+}
+
+@mixin heading-reset {
+  margin-bottom: 1rem !important;
+  font-weight: 600;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+@mixin paragraph-reset {
+  line-height: 1.6;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+.default {
+  @include card-base;
+
+  &:hover {
+    transform: $transform-hover-default;
+  }
+
+  h3 {
+    @include heading-reset;
+    color: $color-primary !important;
+    font-size: 1.2rem;
+  }
+
+  p {
+    @include paragraph-reset;
+    color: $color-text-dark !important;
+  }
+}
+
+.compact {
+  padding: $padding-compact;
+
+  h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  p {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+.highlighted {
+  background: $gradient-highlighted;
+  color: $color-white;
+  border: $border-highlighted;
+
+  h3 {
+    color: $color-white !important;
+  }
+
+  p {
+    color: $color-white-transparent !important;
+  }
+
+  &:hover {
+    transform: $transform-hover-highlighted;
+    box-shadow: $box-shadow-highlighted;
+  }
+}

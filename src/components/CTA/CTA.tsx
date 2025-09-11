@@ -1,4 +1,4 @@
-import styles from './CTA.module.css';
+import styles from './CTA.module.scss';
 import Link from 'next/link';
 
 interface CTAProps {

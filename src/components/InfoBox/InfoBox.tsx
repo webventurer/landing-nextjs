@@ -1,4 +1,4 @@
-import styles from './InfoBox.module.css';
+import styles from './InfoBox.module.scss';
 
 interface InfoBoxProps {
   children: React.ReactNode;

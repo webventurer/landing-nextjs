@@ -1,0 +1,26 @@
+// SCSS Variables
+$max-width: 1200px;
+$padding-desktop: 2rem;
+$padding-mobile: 1rem;
+$color-text: #333;
+$color-bg: #f9f9f9;
+$line-height: 1.6;
+$font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$min-height: 100vh;
+$breakpoint-mobile: 768px;
+
+// Base container styles
+.mainContainer {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $padding-desktop;
+  font-family: $font-family;
+  line-height: $line-height;
+  color: $color-text;
+  background-color: $color-bg;
+  min-height: $min-height;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $padding-mobile;
+  }
+}

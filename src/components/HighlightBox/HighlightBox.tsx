@@ -1,4 +1,4 @@
-import styles from './HighlightBox.module.css';
+import styles from './HighlightBox.module.scss';
 
 interface HighlightBoxProps {
   children: React.ReactNode;

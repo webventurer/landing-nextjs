@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '../../components/page.module.css';
+import styles from '../../components/page.module.scss';
 import pageStyles from './page.module.scss';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';

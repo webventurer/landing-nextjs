@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './FeatureCard.module.css';
+import styles from './FeatureCard.module.scss';
 import React from 'react';
 
 interface FeatureCardProps {
