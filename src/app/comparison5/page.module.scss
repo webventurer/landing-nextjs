@@ -105,6 +105,15 @@ $weight-critical: 700;         // Alerts, hero text
   line-height: 1.4;
 }
 
+.h4 {
+  @include heading-base;
+  font-size: 1.1rem;
+  margin-top: $spacing-xl;
+  margin-bottom: $spacing-sm;
+  line-height: 1.4;
+  color: $color-primary;
+}
+
 // Text elements
 .paragraph {
   margin-bottom: $spacing-md;

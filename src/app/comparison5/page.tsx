@@ -30,6 +30,7 @@ const components = {
   h1: (props: ComponentProps<'h1'>) => <h1 className={pageStyles.h1} {...props} />,
   h2: (props: ComponentProps<'h2'>) => <h2 className={pageStyles.h2} {...props} />,
   h3: (props: ComponentProps<'h3'>) => <h3 className={pageStyles.h3} {...props} />,
+  h4: (props: ComponentProps<'h4'>) => <h4 className={pageStyles.h4} {...props} />,
   p: (props: ComponentProps<'p'>) => <p className={pageStyles.paragraph} {...props} />,
   ul: (props: ComponentProps<'ul'>) => <ul className={pageStyles.list} {...props} />,
   li: (props: ComponentProps<'li'>) => <li className={pageStyles.listItem} {...props} />,
