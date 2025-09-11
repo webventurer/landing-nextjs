@@ -1,8 +1,8 @@
 import styles from '../../components/page.module.scss';
 import pageStyles from './page.module.scss';
 import Header from '../../components/Header/Header';
-import FeaturesGrid from '../../components/FeaturesGrid/FeaturesGrid';
-import FeatureCard from '../../components/FeatureCard/FeatureCard';
+import PropsBasedGrid from '../../components/PropsBasedGrid/PropsBasedGrid';
+import PropsBasedCard from '../../components/PropsBasedCard/PropsBasedCard';
 import CTA from '../../components/CTA/CTA';
 import Footer from '../../components/Footer/Footer';
 
@@ -46,38 +46,38 @@ export default function Comparison4() {
           </p>
         </section>
 
-        <FeaturesGrid>
-          <FeatureCard
+        <PropsBasedGrid>
+          <PropsBasedCard
             emoji="🚀"
             title="Fast Loading"
             description="Static HTML loads instantly without any JavaScript frameworks or build processes. Perfect for simple landing pages that need maximum speed."
           />
-          <FeatureCard
+          <PropsBasedCard
             emoji="📱"
             title="Responsive Design"
             description="CSS Grid and Flexbox ensure this page looks great on all devices, from mobile phones to desktop computers."
           />
-          <FeatureCard
+          <PropsBasedCard
             emoji="🎨"
             title="Modern Styling"
             description="Clean, modern design with smooth transitions and hover effects using pure CSS without any external dependencies."
           />
-          <FeatureCard
+          <PropsBasedCard
             emoji="♿"
             title="Accessible"
             description="Semantic HTML structure with proper heading hierarchy and alt text for screen readers and better SEO."
           />
-          <FeatureCard
+          <PropsBasedCard
             emoji="🔧"
             title="Easy to Modify"
             description="Simple HTML and CSS that any developer can understand and modify without learning complex frameworks."
           />
-          <FeatureCard
+          <PropsBasedCard
             emoji="🌐"
             title="Universal Support"
             description="Works in every browser, even older ones, without polyfills or transpilation. Maximum compatibility guaranteed."
           />
-        </FeaturesGrid>
+        </PropsBasedGrid>
 
         <section className={pageStyles.contentSection}>
           <h3 className={pageStyles.subSectionTitle}>
@@ -90,8 +90,8 @@ export default function Comparison4() {
 
           <pre className={pageStyles.codeBlock}>
             <code className={pageStyles.codeText}>
-{`// This is a React component
-<FeatureCard
+{`// This is a Props-Based React component
+<PropsBasedCard
   emoji="🚀"
   title="Fast Loading"
   description="Static HTML loads instantly..."
