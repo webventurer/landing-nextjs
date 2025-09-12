@@ -99,7 +99,7 @@ This combination of semantic HTML + contextual CSS styling creates clean, access
 // page.tsx
 import { styles } from './page.module.scss'
 
-<div className={styles.page}>
+<div className={styles.content}>
   <h1>Hello</h1>
   <h2>Subtitle</h2>
   <p>Content paragraph</p>
@@ -125,7 +125,7 @@ p {
 
 ```scss
 // page.module.scss (contextual overrides)
-.page {
+.content {
   h1 {
     font-size: 2rem; // Override global h1 in this context
     color: var(--primary-color);
@@ -154,7 +154,7 @@ p {
 **Implementation Strategy:**
 
 1. Define base typography in global styles
-2. Create contextual container classes (`.page`, `.article`, `.sidebar`)
+2. Create contextual container classes (`.content`, `.article`, `.sidebar`)
 3. Use nested SCSS selectors to style elements within those contexts
 4. Reserve explicit classes for truly unique styling needs
 
