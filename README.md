@@ -1,4 +1,4 @@
-## Goal of this project
+# Goal of this project
 
 In this next.js project we showcase the different ways to create a web page so we can see which approach we prefer.
 
@@ -64,6 +64,26 @@ npx create-next-app@latest my-landing
 - **create-next-app@latest** → downloads the most recent version of the Next.js project generator.
 - **my-landing** → the name of the new folder it will create (your project directory).
 - **--use-pnpm** → use pnpm package manage over npm or yarn`
+
+### Pre-commit Hooks
+
+This project uses [pre-commit](https://pre-commit.com/) to automatically run TypeScript type checking before commits.
+
+To set up pre-commit hooks (one-time setup for new developers):
+
+```bash
+# Install pre-commit (if not already installed)
+brew install pre-commit
+
+# Install the hooks
+pre-commit install
+```
+
+The hooks will now run automatically on every commit. To run them manually:
+
+```bash
+pre-commit run --all-files
+```
 
 ## Learn more
 
