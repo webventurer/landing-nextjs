@@ -1,13 +1,8 @@
-# Best Practices
-
-This document outlines coding best practices and guidelines discovered during
-the development of this landing pages comparison project.
-
-## CSS & Styling Best Practices
-
-### 1. Avoid CSS Class Names That Mirror HTML Tag Names
+# Avoid CSS Class Names That Mirror HTML Tag Names
 
 Don't create class names that are the same as the tag name. Just target the tag.
+
+## The Problem
 
 **❌ Code Smell - Don't do this:**
 
@@ -18,6 +13,7 @@ Don't create class names that are the same as the tag name. Just target the tag.
 <p className={pageStyles.paragraph} {...props} />
 ```
 
+## The Solution
 
 **✅ Better approach - Use contextual styling:**
 
@@ -68,7 +64,7 @@ p {
 }
 ```
 
-**Why this is better:**
+## Why This Is Better
 
 - **Semantic HTML**: Elements retain their semantic meaning without unnecessary
   className clutter
@@ -80,7 +76,7 @@ p {
 - **Better CSS Cascading**: Takes advantage of CSS's natural cascading behavior
 - **Reduced Bundle Size**: Fewer class name strings in your JavaScript bundle
 
-**Implementation Strategy:**
+## Implementation Strategy
 
 1. Define base typography in global styles
 2. Create contextual container classes (`.content`, `.article`, `.sidebar`)
@@ -88,11 +84,3 @@ p {
 4. Reserve explicit classes for truly unique styling needs
 
 This approach makes your styles more maintainable and your HTML more semantic.
-
-## References
-
-For additional CSS best practices and patterns, see the dedicated guides in the [best practices directory](./best-practices/):
-
-- [**Semantic HTML**](./best-practices/semantic-html.md) - When to use semantic elements vs generic divs
-- [**CSS Architecture: Layout + Content Pattern**](./best-practices/layout-content-pattern.md) - Two-layer styling architecture
-- [**CSS File Organization**](./best-practices/css-file-organization.md) - Separation by concern and file structure patterns

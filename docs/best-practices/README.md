@@ -14,9 +14,9 @@ during the development of this landing pages comparison project.
 - [**Layout + Content Pattern**](./layout-content-pattern.md) - Two-layer CSS architecture that separates layout concerns from content styling, following proven patterns from Bootstrap, Tailwind, and modern frameworks.
 - [**CSS File Organization**](./css-file-organization.md) - Separation by concern and file structure patterns for maintainable CSS architecture.
 
-### CSS & Styling
-See the main [Best Practices](../best-practices.md) document for:
-- CSS Class Naming Conventions
+### Code Quality
+See the [Code Smells](../code-smells/) directory for:
+- CSS Anti-patterns and Better Alternatives
 
 ## Contributing
 
