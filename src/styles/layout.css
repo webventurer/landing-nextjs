@@ -7,6 +7,7 @@
   box-sizing: border-box;
 }
 
+/* Page Layout Patterns */
 .page-layout {
   max-width: 1200px;
   margin: 0 auto;
@@ -19,6 +20,7 @@
   min-height: 100vh;
 }
 
+/* Responsive adjustments for page layout */
 @media (max-width: 768px) {
   .page-layout {
     padding: 1rem;
