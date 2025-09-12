@@ -1,4 +1,3 @@
-import styles from '../../components/page.module.scss';
 import pageStyles from './page.module.scss';
 import Header from '../../components/Header/Header';
 import PropsBasedGrid from '../../components/PropsBasedGrid/PropsBasedGrid';
@@ -13,7 +12,7 @@ export const metadata = {
 
 export default function Comparison4() {
   return (
-    <div className={styles.mainContainer}>
+    <div className="page-layout">
       <Header
         title="React Components Landing Page"
         subtitle="Same functionality as comparison3.html but with React components for better component reusability"

@@ -74,114 +74,106 @@ $weight-critical: 700;         // Alerts, hero text
   border: 1px solid $border-color;
 }
 
-// Main styles
 .content {
   max-width: none;
-}
 
-// Typography hierarchy
-.h1 {
-  @include heading-base;
-  font-size: 2rem;
-  margin-top: $spacing-xxl;
-  margin-bottom: $spacing-lg;
-  line-height: 1.2;
-}
-
-.h2 {
-  @include heading-base;
-  font-size: 1.5rem;
-  color: $color-primary;
-  margin-top: $spacing-xl;
-  margin-bottom: $spacing-md;
-  line-height: 1.3;
-}
-
-.h3 {
-  @include heading-base;
-  font-size: 1.2rem;
-  margin-top: $spacing-xxl;
-  margin-bottom: $spacing-md;
-  line-height: 1.4;
-}
-
-.h4 {
-  @include heading-base;
-  font-size: 1.1rem;
-  margin-top: $spacing-xl;
-  margin-bottom: $spacing-sm;
-  line-height: 1.4;
-  color: $color-primary;
-}
-
-// Text elements
-.paragraph {
-  margin-bottom: $spacing-md;
-  line-height: 1.6;
-  color: $color-text;
-}
-
-.list {
-  margin-bottom: $spacing-md;
-  padding-left: $spacing-xl;
-}
-
-.listItem {
-  margin-bottom: $spacing-sm;
-  line-height: 1.5;
-}
-
-.strong {
-  font-weight: 600;
-  color: $color-secondary;
-}
-
-// Code elements
-.inlineCode {
-  @include code-style;
-  padding: $spacing-xs 0.4rem;
-  font-size: 0.9em;
-  color: $color-code;
-  border: 1px solid $color-border-light;
-}
-
-.codeBlock {
-  @include code-style;
-  background-color: $color-bg-code;
-  padding: $spacing-md;
-  border-radius: $radius-md;
-  overflow: auto;
-  margin-bottom: $spacing-md;
-  border: 1px solid $color-border;
-  font-size: 0.9rem;
-  line-height: 1.4;
-
-  code {
-    background: none;
-    padding: 0;
-    border: none;
-    font-size: inherit;
-    color: inherit;
+  h1 {
+    @include heading-base;
+    font-size: 2rem;
+    margin-top: $spacing-xxl;
+    margin-bottom: $spacing-lg;
+    line-height: 1.2;
   }
-}
 
-// Blockquote
-.blockquote {
-  border-left: 4px solid $color-primary;
-  margin: $spacing-lg 0;
-  padding: $spacing-md $spacing-lg;
-  background-color: $color-bg-light;
-  border-radius: 0 $radius-md $radius-md 0;
-  font-style: italic;
-  color: $color-text-light;
+  h2 {
+    @include heading-base;
+    font-size: 1.5rem;
+    color: $color-primary;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-md;
+    line-height: 1.3;
+  }
+
+  h3 {
+    @include heading-base;
+    font-size: 1.2rem;
+    margin-top: $spacing-xxl;
+    margin-bottom: $spacing-md;
+    line-height: 1.4;
+  }
+
+  h4 {
+    @include heading-base;
+    font-size: 1.1rem;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-sm;
+    line-height: 1.4;
+    color: $color-primary;
+  }
 
   p {
-    margin-bottom: 0;
+    margin-bottom: $spacing-md;
+    line-height: 1.6;
+    color: $color-text;
   }
-}
 
-// Global component spacing
-.content {
+  ul {
+    margin-bottom: $spacing-md;
+    padding-left: $spacing-xl;
+  }
+
+  li {
+    margin-bottom: $spacing-sm;
+    line-height: 1.5;
+  }
+
+  strong {
+    font-weight: 600;
+    color: $color-secondary;
+  }
+
+  code {
+    @include code-style;
+    padding: $spacing-xs 0.4rem;
+    font-size: 0.9em;
+    color: $color-code;
+    border: 1px solid $color-border-light;
+  }
+
+  pre {
+    @include code-style;
+    background-color: $color-bg-code;
+    padding: $spacing-md;
+    border-radius: $radius-md;
+    overflow: auto;
+    margin-bottom: $spacing-md;
+    border: 1px solid $color-border;
+    font-size: 0.9rem;
+    line-height: 1.4;
+
+    code {
+      background: none;
+      padding: 0;
+      border: none;
+      font-size: inherit;
+      color: inherit;
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid $color-primary;
+    margin: $spacing-lg 0;
+    padding: $spacing-md $spacing-lg;
+    background-color: $color-bg-light;
+    border-radius: 0 $radius-md $radius-md 0;
+    font-style: italic;
+    color: $color-text-light;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
   :global(.featuresGrid) {
     margin: $spacing-xl 0;
   }
@@ -189,92 +181,85 @@ $weight-critical: 700;         // Alerts, hero text
   :global(.cta) {
     margin: ($spacing-xl + $spacing-md) 0;
   }
-}
 
-// Table styles with nesting
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: $spacing-lg 0;
-  background-color: $color-white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: $radius-md;
-  overflow: hidden;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: $spacing-lg 0;
+    background-color: $color-white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: $radius-md;
+    overflow: hidden;
 
-  // Responsive
-  @media (max-width: 768px) {
-    font-size: 0.8rem;
+    // Responsive
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
   }
-}
 
-.tableHeader {
-  background: $gradient-purple;
-  color: $color-white !important;
-  font-weight: 600;
-}
-
-.tableHeaderCell {
-  padding: $spacing-md;
-  text-align: left;
-  font-size: 0.9rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  color: $color-white !important;
-
-  &:last-child {
-    border-right: none;
+  thead {
+    background: $gradient-purple;
     color: $color-white !important;
-  }
-
-  // Ensure all content inside header cells is white
-  *,
-  strong {
-    color: $color-white !important;
-  }
-
-  // Responsive
-  @media (max-width: 768px) {
-    padding: 0.75rem 0.5rem;
-  }
-}
-
-.tableBody {
-  background-color: $color-white;
-}
-
-.tableRow {
-  border-bottom: 1px solid $color-border-light;
-  transition: background-color 0.2s ease;
-
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-// Only apply hover to body rows, not header rows
-.tableBody .tableRow {
-  &:hover {
-    background-color: $color-bg-light;
-  }
-}
-
-.tableCell {
-  padding: $spacing-md;
-  font-size: 0.9rem;
-  border-right: 1px solid $color-border-light;
-  vertical-align: top;
-
-  &:last-child {
-    border-right: none;
-  }
-
-  &:first-child {
     font-weight: 600;
-    color: $color-secondary;
-    background-color: $color-bg-light;
   }
 
-  // Responsive
-  @media (max-width: 768px) {
-    padding: 0.75rem 0.5rem;
+  th {
+    padding: $spacing-md;
+    text-align: left;
+    font-size: 0.9rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    color: $color-white !important;
+
+    &:last-child {
+      border-right: none;
+      color: $color-white !important;
+    }
+
+    *,
+    strong {
+      color: $color-white !important;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.75rem 0.5rem;
+    }
+  }
+
+  tbody {
+    background-color: $color-white;
+
+    tr {
+      border-bottom: 1px solid $color-border-light;
+      transition: background-color 0.2s ease;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: $color-bg-light;
+      }
+    }
+  }
+
+  td {
+    padding: $spacing-md;
+    font-size: 0.9rem;
+    border-right: 1px solid $color-border-light;
+    vertical-align: top;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:first-child {
+      font-weight: 600;
+      color: $color-secondary;
+      background-color: $color-bg-light;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.75rem 0.5rem;
+    }
   }
 }
