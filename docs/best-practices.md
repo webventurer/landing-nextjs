@@ -83,6 +83,8 @@ This combination of semantic HTML + contextual CSS styling creates clean, access
 
 ### 2. Avoid CSS Class Names That Mirror HTML Tag Names
 
+Don't create class names that are the same as the tag name. Just target the tag.
+
 **❌ Code Smell - Don't do this:**
 
 ```tsx
