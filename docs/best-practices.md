@@ -60,6 +60,40 @@ browsers, screen readers, search engines, and other tools.
 5. **Use `<strong>` vs `<b>`** - `<strong>` indicates importance, `<b>` is just
    bold styling
 
+#### When to Use `<article>` vs `<div>` for Feature Cards
+
+**✅ Why `<article>` is correct for feature cards:**
+
+- Each card represents a feature block that could stand alone (e.g., reused in
+  docs, marketing emails, or as part of a features page)
+- Using `<article>` instead of a generic `<div>` makes it clearer to search
+  engines, screen readers, and future developers that this is a discrete,
+  meaningful unit
+- When placed inside `<section>`, it creates proper hierarchy: a `<section>`
+  groups related articles
+
+**Example of correct usage:**
+```html
+<section class="features">
+  <article class="feature-card">
+    <h3>🚀 Fast Loading</h3>
+    <p>Static HTML loads instantly without any JavaScript frameworks...</p>
+  </article>
+
+  <article class="feature-card">
+    <h3>📱 Responsive Design</h3>
+    <p>CSS Grid and Flexbox ensure this page looks great...</p>
+  </article>
+</section>
+```
+
+**🔎 When NOT to use `<article>`:**
+
+- If the content is purely decorative or layout-only, use `<div>`
+- If the content isn't independently meaningful (e.g., part of a bigger story),
+  `<section>` or `<div>` may be better
+- For wrapper/container elements that only provide styling or layout structure
+
 **Integration with CSS:**
 
 Semantic HTML works perfectly with our contextual styling approach:
@@ -316,7 +350,9 @@ scalability and maintainability.
 
 ### 4. CSS File Organization: Separation by Concern
 
-Following the same architectural principles, our project separates CSS into dedicated files organized by responsibility. This extends the two-layer pattern into a clean three-file system.
+Following the same architectural principles, our project separates CSS into
+dedicated files organized by responsibility. This extends the two-layer pattern
+into a clean three-file system.
 
 #### File Structure
 
@@ -454,7 +490,8 @@ This separation pattern is used by major design systems and frameworks:
 
 - **Material-UI**: Separate theme, typography, and layout systems
 - **Chakra UI**: Independent typography, layout, and component systems
-- **Tailwind CSS**: Utility organization by concern (spacing, typography, layout)
+- **Tailwind CSS**: Utility organization by concern (spacing, typography,
+  layout)
 - **Bootstrap**: Separate files for grid, typography, utilities
 - **Design Systems**: Atomic design with separated token files
 
@@ -468,4 +505,5 @@ When refactoring existing CSS:
 4. **Maintain functionality**: Ensure no styles are lost in translation
 5. **Test thoroughly**: Verify all pages render correctly
 
-This file organization creates a maintainable, scalable CSS architecture that grows with your project while keeping concerns properly separated.
+This file organization creates a maintainable, scalable CSS architecture that
+grows with your project while keeping concerns properly separated.
