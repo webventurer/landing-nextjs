@@ -10,7 +10,7 @@ This document is designed to fit into a **Product Requirements Document**.
 
 > _"Create beautiful, maintainable landing pages and apps where content writers think in pure markdown and developers think in encapsulated components—each varying independently without interference."_
 
-> **Core philosophy**: Build a clean, understandable visual language using React components + SCSS + CSS Modules within markdown MDX files that reduces long-term maintenance costs. Each component is a self-contained unit that encapsulates its styling, state, and behavior—keeping internal implementation details private while exposing only a clean, simple interface to the outside world. This separation ensures that MDX content files remain clean, readable markdown that both humans and AI can easily parse and understand, with styling complexity hidden within the components themselves.
+> **Core philosophy**: Build a clean, understandable visual language using React components + SCSS + CSS Modules within markdown files that reduces long-term maintenance costs. Each component is a self-contained unit that encapsulates its styling, state, and behavior—keeping internal implementation details private while exposing only a clean, simple interface to the outside world. This separation ensures that content files remain clean, readable markdown that both humans and AI can easily parse and understand, with styling complexity hidden within the components themselves.
 
 ### 1. Clean & Readable Code
 
@@ -110,8 +110,11 @@ $radius-md: 8px;
 - Use nesting with `&` for pseudo-selectors and states
 - Import as: `import styles from './Component.module.scss'`
 
-#### 3. MDX Integration
+#### 3. Content Integration
 
+**For content-heavy pages**, use one of these approaches:
+
+**Option A: MDX Integration** (React/JSX components in Markdown)
 ```tsx
 import { MDXProvider } from "@mdx-js/react";
 import MDXContent from "./content.mdx";
@@ -134,12 +137,29 @@ export default function Page() {
 }
 ```
 
+**Option B: Standard Markdown** (with external component rendering)
+```tsx
+import { marked } from 'marked';
+import fs from 'fs';
+
+export default function Page() {
+  const markdownContent = fs.readFileSync('content.md', 'utf-8');
+  const htmlContent = marked(markdownContent);
+
+  return (
+    <div className={styles.content}>
+      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <FeatureCard title="Example" description="Rendered separately" />
+    </div>
+  );
+}
+```
+
 **Requirements**:
 
-- Use MDX for content-heavy pages
-- Map HTML elements to styled components
-- Allow React components within markdown
 - Maintain separation between content and presentation
+- Allow structured content authoring
+- Enable component reusability across content
 
 ---
 
@@ -151,7 +171,7 @@ src/
 │   └── [page]/
 │       ├── page.tsx           # Main page component
 │       ├── page.module.scss   # Page-specific SCSS with CSS Modules
-│       └── content.mdx        # Content in MDX format
+│       └── content.md         # Content in Markdown format
 └── components/
     ├── ComponentName/
     │   ├── index.tsx          # Component logic
@@ -238,7 +258,7 @@ $font-family-primary: "Poppins", sans-serif;
 
 #### Page Components
 
-- Use MDX for content
+- Use Markdown for content (with MDX when React components needed)
 - Import reusable components
 - Handle layout and data fetching
 - Keep business logic separate from presentation
@@ -265,7 +285,7 @@ $font-family-primary: "Poppins", sans-serif;
 
 ### Architecture Quality
 
-- [ ] Content is separated from presentation (MDX files)
+- [ ] Content is separated from presentation (Markdown files)
 - [ ] Components are reusable and composable
 - [ ] File structure follows conventions
 - [ ] Dependencies are properly managed
@@ -344,7 +364,7 @@ A display implementation is successful when:
 
 ## Conclusion
 
-This technology stack (React + TypeScript + CSS Modules + SCSS + MDX) provides:
+This technology stack (React + TypeScript + CSS Modules + SCSS + Markdown) provides:
 
 - **Clean separation** between content, styling, and behavior
 - **Namespace isolation** preventing style conflicts
