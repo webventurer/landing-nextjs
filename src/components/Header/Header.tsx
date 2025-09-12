@@ -1,5 +1,3 @@
-import styles from './Header.module.scss';
-
 interface HeaderProps {
   title: string;
   subtitle: string;
@@ -7,7 +5,7 @@ interface HeaderProps {
 
 export default function Header({ title, subtitle }: HeaderProps) {
   return (
-    <header className={styles.headerContainer}>
+    <header>
       <h1>{title}</h1>
       <p>{subtitle}</p>
     </header>

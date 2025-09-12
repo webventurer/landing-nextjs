@@ -16,8 +16,8 @@ export default function FeatureCard({ children, flavour = 'default' }: FeatureCa
   }
 
   return (
-    <div className={classes}>
+    <article className={classes}>
       {children}
-    </div>
+    </article>
   );
 }

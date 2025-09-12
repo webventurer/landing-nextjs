@@ -3,18 +3,20 @@ $color-text: #7f8c8d;
 $color-border: #ecf0f1;
 
 $margin-top: 3rem;
-$padding: 2rem;
+$padding-top: 2rem;
 $font-size: 0.9rem;
+$line-height: 1.5;
 
 // Footer component styles
-.footerContainer {
+footer {
   text-align: center;
   margin-top: $margin-top;
-  padding: $padding;
+  padding-top: $padding-top;
   border-top: 1px solid $color-border;
   color: $color-text;
 
   p {
     font-size: $font-size;
+    line-height: $line-height;
   }
 }
