@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import styles from './PropsBasedCard.module.scss';
 
 interface PropsBasedCardProps {
@@ -15,11 +16,12 @@ export default function PropsBasedCard({
   description,
   flavour = 'default'
 }: PropsBasedCardProps) {
-  let classes = styles.default;
-
-  if (flavour && flavour !== 'default') {
-    classes += ` ${styles[flavour]}`;
-  }
+  const classes = clsx(
+    styles.default,
+    {
+      [styles[flavour]]: flavour !== 'default'
+    }
+  );
 
   return (
     <div className={classes}>

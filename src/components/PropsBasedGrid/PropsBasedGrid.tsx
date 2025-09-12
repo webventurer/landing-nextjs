@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import styles from './PropsBasedGrid.module.scss';
 import PropsBasedCard from '../PropsBasedCard/PropsBasedCard';
 import React from 'react';
@@ -10,9 +11,12 @@ interface PropsBasedGridProps {
 }
 
 export default function PropsBasedGrid({ children, flavour = 'default' }: PropsBasedGridProps) {
-  const gridClass = flavour === 'default'
-    ? styles.propsBasedGrid
-    : `${styles.propsBasedGrid} ${styles[flavour]}`;
+  const gridClass = clsx(
+    styles.propsBasedGrid,
+    {
+      [styles[flavour]]: flavour !== 'default'
+    }
+  );
 
   // Pass flavour down to all PropsBasedCard children
   const childrenWithFlavour = React.Children.map(children, child => {
