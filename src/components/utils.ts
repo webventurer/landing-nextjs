@@ -1,5 +1,5 @@
 
-import { JSX, ReactElement, ReactNode, Children, ComponentType } from 'react';
+import { JSX, ReactElement, ReactNode, Children } from 'react';
 
 import { renderToStaticMarkup } from 'react-dom/server';
 
@@ -7,7 +7,9 @@ type Sequence = (keyof JSX.IntrinsicElements)[]
 
 const matchesTag = (el: ReactElement, tag: keyof JSX.IntrinsicElements) =>
   (typeof el.type === 'string' && el.type === tag) ||
-  (typeof el.type === 'function' && (el.type as any).displayName === tag)
+  (typeof el.type === 'function' &&
+   'displayName' in el.type &&
+   (el.type as React.ComponentType & { displayName: string }).displayName === tag)
 
 export const groupBySequence = (children: ReactNode, seq: Sequence) => {
   const elements = Children.toArray(children) as ReactElement[];
@@ -24,7 +26,8 @@ export const groupBySequence = (children: ReactNode, seq: Sequence) => {
   return groups
 }
 
-export const withDisplayNames = (components: Record<string, ComponentType<any>>) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const withDisplayNames = (components: Record<string, React.ComponentType<any>>) => {
   Object.keys(components).forEach((key) => {
     components[key].displayName = key;
   });
