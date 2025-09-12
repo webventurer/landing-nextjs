@@ -1,5 +1,12 @@
 /* Layout Utilities - Reusable layout patterns */
 
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .page-layout {
   max-width: 1200px;
   margin: 0 auto;
