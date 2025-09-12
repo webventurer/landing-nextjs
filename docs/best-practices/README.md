@@ -11,8 +11,11 @@ during the development of this landing pages comparison project.
   `<div>`, proper element hierarchy, and integration with CSS.
 
 ### CSS & Architecture
-- [**Layout + Content Pattern**](./layout-content-pattern.md) - Two-layer CSS architecture that separates layout concerns from content styling, following proven patterns from Bootstrap, Tailwind, and modern frameworks.
-- [**CSS File Organization**](./css-file-organization.md) - Separation by concern and file structure patterns for maintainable CSS architecture.
+- [**Layout + Content Pattern**](./layout-content-pattern.md) - Two-layer CSS
+  architecture that separates layout concerns from content styling, following
+  proven patterns from Bootstrap, Tailwind, and modern frameworks.
+- [**CSS File Organization**](./css-file-organization.md) - Separation by
+  concern and file structure patterns for maintainable CSS architecture.
 
 ### Code Quality
 See the [Code Smells](../code-smells/) directory for:
@@ -22,8 +25,7 @@ See the [Code Smells](../code-smells/) directory for:
 
 When adding new best practices:
 
-1. **Create focused documents** - Each practice should have its own file when it
-   becomes substantial
+1. **Create focused documents** - Each practice should have its own file when it becomes substantial
 2. **Include examples** - Always provide both ❌ wrong and ✅ correct examples
 3. **Explain the why** - Document the reasoning behind each recommendation
 4. **Update this index** - Add links to new documents in the appropriate section
