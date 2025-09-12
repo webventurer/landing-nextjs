@@ -1,5 +1,12 @@
 /* Base Typography Styles - Global defaults for semantic HTML */
 
+/* Body Typography */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+  line-height: 1.6;
+}
+
 /* Heading Styles */
 h1,
 h2,
