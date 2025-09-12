@@ -30,7 +30,7 @@ $transition-button: background 0.3s ease;
   align-items: center;
   text-align: center;
   background: $gradient-background;
-  color: $color-white;
+  color: $color-white !important;
   padding: $padding-container;
   border-radius: $border-radius-container;
   margin-bottom: $margin-bottom-container;
@@ -39,12 +39,14 @@ $transition-button: background 0.3s ease;
     font-size: $font-size-title;
     margin-bottom: $margin-title;
     font-weight: $font-weight-title;
+    color: $color-white !important;
   }
 
   p {
     font-size: $font-size-text;
     margin-bottom: $margin-text;
     opacity: $opacity-text;
+    color: $color-white !important;
   }
 }
 
@@ -54,7 +56,7 @@ $transition-button: background 0.3s ease;
   a {
     display: inline-block;
     background: $color-button;
-    color: $color-white;
+    color: $color-white !important;
     padding: $padding-button;
     text-decoration: none;
     border-radius: $border-radius-button;
@@ -63,6 +65,7 @@ $transition-button: background 0.3s ease;
 
     &:hover {
       background: $color-button-hover;
+      color: $color-white !important;
     }
   }
 }
