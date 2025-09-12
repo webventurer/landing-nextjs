@@ -16,8 +16,6 @@ import { withDisplayNames } from '../components/utils';
 
 import MDXContent from './content.mdx';
 
-import { ComponentProps } from 'react';
-
 const components = withDisplayNames({
   FeatureCard,
   FeaturesGrid,

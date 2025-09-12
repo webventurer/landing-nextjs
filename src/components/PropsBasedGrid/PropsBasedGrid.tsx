@@ -17,7 +17,7 @@ export default function PropsBasedGrid({ children, flavour = 'default' }: PropsB
   // Pass flavour down to all PropsBasedCard children
   const childrenWithFlavour = React.Children.map(children, child => {
     if (React.isValidElement(child) && child.type === PropsBasedCard) {
-      return React.cloneElement(child, { flavour } as any);
+      return React.cloneElement(child, { flavour } as React.ComponentProps<typeof PropsBasedCard>);
     }
     return child;
   });

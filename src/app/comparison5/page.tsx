@@ -1,7 +1,5 @@
 'use client';
 
-import { ComponentProps } from 'react';
-
 import { MDXProvider } from '@mdx-js/react';
 
 import contentStyles from './page.module.scss';
