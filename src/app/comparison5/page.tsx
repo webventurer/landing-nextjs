@@ -1,10 +1,13 @@
 'use client';
 
+import { ComponentProps } from 'react';
+
+import { MDXProvider } from '@mdx-js/react';
+
 import styles from '../../components/page.module.scss';
 import pageStyles from './page.module.scss';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { MDXProvider } from '@mdx-js/react';
 import FeatureCard from '../../components/FeatureCard/FeatureCard';
 import FeaturesGrid from '../../components/FeaturesGrid/FeaturesGrid';
 import CTA from '../../components/CTA/CTA';
@@ -12,13 +15,13 @@ import InfoBox from '../../components/InfoBox/InfoBox';
 import WarningBox from '../../components/WarningBox/WarningBox';
 import SuccessBox from '../../components/SuccessBox/SuccessBox';
 import HighlightBox from '../../components/HighlightBox/HighlightBox';
-import Section from '@/components/Section/Section';
+import Section from '../../components/Section/Section';
+
+import { withDisplayNames } from '../../components/utils';
 
 import MDXContent from './content.mdx';
 
-import { ComponentProps } from 'react';
-
-const components = {
+const components = withDisplayNames({
   FeatureCard,
   FeaturesGrid,
   CTA,
@@ -44,7 +47,7 @@ const components = {
   tr: (props: ComponentProps<'tr'>) => <tr className={pageStyles.tableRow} {...props} />,
   th: (props: ComponentProps<'th'>) => <th className={pageStyles.tableHeaderCell} {...props} />,
   td: (props: ComponentProps<'td'>) => <td className={pageStyles.tableCell} {...props} />,
-};
+});
 
 export default function Comparison5() {
   return (
