@@ -16,6 +16,7 @@ during the development of this landing pages comparison project.
   proven patterns from Bootstrap, Tailwind, and modern frameworks.
 - [**CSS File Organization**](./css-file-organization.md) - Separation by
   concern and file structure patterns for maintainable CSS architecture.
+- [**Joining CSS Class Names**](./join-css-class-names.md) - Using clsx for clean, conditional class name construction in React components.
 
 ### Code Quality
 See the [Code Smells](../code-smells/) directory for:
