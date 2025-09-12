@@ -13,11 +13,11 @@ export default function CTA({ title, description, buttonText, buttonHref }: CTAP
     <section className={styles.container}>
       <h2>{title}</h2>
       <p>{description}</p>
-      <div className={styles.buttons}>
+      <nav className={styles.buttons}>
         <Link href={buttonHref}>
           {buttonText}
         </Link>
-      </div>
+      </nav>
     </section>
   );
 }
