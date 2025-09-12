@@ -114,64 +114,23 @@ blockquote p:last-child {
 }
 
 /* Table Typography */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
 thead {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   font-weight: 600;
 }
 
 th {
-  padding: 1rem;
   text-align: left;
   font-size: 0.9rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
 }
 
-th:last-child {
-  border-right: none;
-}
-
-tbody {
-  background-color: #fff;
-}
-
-tr {
-  border-bottom: 1px solid #e1e8ed;
-  transition: background-color 0.2s ease;
-}
-
-tbody tr:hover {
-  background-color: #f8f9fa;
-}
-
-tr:last-child {
-  border-bottom: none;
-}
-
 td {
-  padding: 1rem;
   font-size: 0.9rem;
-  border-right: 1px solid #e1e8ed;
   vertical-align: top;
-}
-
-td:last-child {
-  border-right: none;
 }
 
 td:first-child {
   font-weight: 600;
   color: #2c3e50;
-  background-color: #f8f9fa;
 }
