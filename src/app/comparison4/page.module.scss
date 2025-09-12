@@ -1,44 +1,51 @@
-/* Page content styles for comparison4 */
-.contentSection {
-  margin-bottom: 3rem;
-}
+/* Follows semantic HTML styling approach */
 
-.sectionTitle {
-  font-size: 1.5rem;
-  color: #3498db;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
+.content {
+  max-width: none;
 
-.subSectionTitle {
-  font-size: 1.2rem;
-  color: #2c3e50;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
+  h2 {
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
 
-.paragraph {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
+  h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
 
-.featuresList {
-  margin-bottom: 1rem;
-  padding-left: 2rem;
-}
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
 
-.featureItem {
-  margin-bottom: 0.5rem;
-}
+  ul {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
 
-.codeBlock {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  border-radius: 8px;
-  overflow: auto;
-  margin-bottom: 1rem;
-}
+  li {
+    margin-bottom: 0.5rem;
+  }
 
-.codeText {
-  font-size: 0.9rem;
+  section {
+    margin-bottom: 3rem;
+  }
+
+  pre {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: auto;
+    margin-bottom: 1rem;
+
+    code {
+      font-size: 0.9rem;
+    }
+  }
 }

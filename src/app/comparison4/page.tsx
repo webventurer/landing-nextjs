@@ -1,4 +1,4 @@
-import pageStyles from './page.module.scss';
+import contentStyles from './page.module.scss';
 import Header from '../../components/Header/Header';
 import PropsBasedGrid from '../../components/PropsBasedGrid/PropsBasedGrid';
 import PropsBasedCard from '../../components/PropsBasedCard/PropsBasedCard';
@@ -18,29 +18,29 @@ export default function Comparison4() {
         subtitle="Same functionality as comparison3.html but with React components for better component reusability"
       />
 
-      <main>
-        <section className={pageStyles.contentSection}>
-          <h2 className={pageStyles.sectionTitle}>
+      <main className={contentStyles.content}>
+        <section>
+          <h2>
             Welcome to React Components
           </h2>
 
-          <p className={pageStyles.paragraph}>
+          <p>
             This page demonstrates how we can use <strong>React components</strong> to create the same landing page functionality as our previous HTML examples, but with the benefits of:
           </p>
 
-          <ul className={pageStyles.featuresList}>
-            <li className={pageStyles.featureItem}>⚛️ <strong>React component reusability</strong> - Reusable, typed components</li>
-            <li className={pageStyles.featureItem}>🎯 <strong>Type safety</strong> - TypeScript ensures component props are correct</li>
-            <li className={pageStyles.featureItem}>🔧 <strong>Easy maintenance</strong> - Change a component once, update everywhere</li>
-            <li className={pageStyles.featureItem}>🚀 <strong>Next.js integration</strong> - Built-in optimizations and server-side rendering</li>
-            <li className={pageStyles.featureItem}>📦 <strong>CSS Modules</strong> - Scoped styling with no conflicts</li>
+          <ul>
+            <li>⚛️ <strong>React component reusability</strong> - Reusable, typed components</li>
+            <li>🎯 <strong>Type safety</strong> - TypeScript ensures component props are correct</li>
+            <li>🔧 <strong>Easy maintenance</strong> - Change a component once, update everywhere</li>
+            <li>🚀 <strong>Next.js integration</strong> - Built-in optimizations and server-side rendering</li>
+            <li>📦 <strong>CSS Modules</strong> - Scoped styling with no conflicts</li>
           </ul>
 
-          <h3 className={pageStyles.subSectionTitle}>
+          <h3>
             Features Overview
           </h3>
 
-          <p className={pageStyles.paragraph}>
+          <p>
             Here are the same features as our HTML version, but now powered by React:
           </p>
         </section>
@@ -78,17 +78,17 @@ export default function Comparison4() {
           />
         </PropsBasedGrid>
 
-        <section className={pageStyles.contentSection}>
-          <h3 className={pageStyles.subSectionTitle}>
+        <section>
+          <h3>
             How React Components Work
           </h3>
 
-          <p className={pageStyles.paragraph}>
+          <p>
             React components allow you to write <strong>reusable UI pieces</strong> with props and state:
           </p>
 
-          <pre className={pageStyles.codeBlock}>
-            <code className={pageStyles.codeText}>
+          <pre>
+            <code>
 {`// This is a Props-Based React component
 <PropsBasedCard
   emoji="🚀"
@@ -98,13 +98,13 @@ export default function Comparison4() {
             </code>
           </pre>
 
-          <p className={pageStyles.paragraph}>
+          <p>
             This gives you the best of both worlds:
           </p>
-          <ul className={pageStyles.featuresList}>
-            <li className={pageStyles.featureItem}>Content creators can work with familiar component APIs</li>
-            <li className={pageStyles.featureItem}>Developers can create reusable, interactive components</li>
-            <li className={pageStyles.featureItem}>Everything is type-safe and optimized by Next.js</li>
+          <ul>
+            <li>Content creators can work with familiar component APIs</li>
+            <li>Developers can create reusable, interactive components</li>
+            <li>Everything is type-safe and optimized by Next.js</li>
           </ul>
         </section>
 
