@@ -17,7 +17,7 @@ export default function PropsBasedCard({
   flavour = 'default'
 }: PropsBasedCardProps) {
   const classes = clsx(
-    styles.default,
+    styles.propsBasedCard,
     {
       [styles[flavour]]: flavour !== 'default'
     }
