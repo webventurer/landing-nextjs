@@ -1,6 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
+import clsx from 'clsx';
 
 import styles from './FeaturesGrid.module.scss';
 import FeatureCard from '../FeatureCard/FeatureCard';
@@ -12,7 +13,10 @@ interface FeaturesGridProps {
 }
 
 export default function FeaturesGrid({ children, flavour }: FeaturesGridProps) {
-  const classes = flavour ? `${styles.featuresGrid} ${styles[flavour]}` : styles.featuresGrid;
+  const classes = clsx(
+    styles.featuresGrid,
+    flavour && styles[flavour] // Only apply if flavour exists
+  );
   const cards = groupBySequence(children, ['h3', 'p']);
 
   return (

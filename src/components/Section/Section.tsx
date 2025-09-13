@@ -9,9 +9,7 @@ interface SectionProps {
 export default function Section({ children, flavour }: SectionProps) {
   const classes = clsx(
     styles.section,
-    {
-      [styles[flavour]]: flavour
-    }
+    styles[flavour] // Direct dynamic access - simpler than conditional object
   );
 
   return (
