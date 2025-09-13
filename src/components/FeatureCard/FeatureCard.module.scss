@@ -19,78 +19,68 @@ $border-highlighted: 2px solid #4f46e5;
 
 $transition-default: transform 0.3s ease;
 
-// Mixins
-@mixin card-base {
+// Base class with all common styles - eliminates mixin duplication
+.featureCard {
   background: $color-white;
   padding: $padding-default;
   border-radius: $border-radius;
   box-shadow: $box-shadow-default;
   transition: $transition-default;
   cursor: pointer;
-}
-
-@mixin heading-reset {
-  margin-bottom: 1rem !important;
-  font-weight: 600;
-  margin-top: 0 !important;
-  padding: 0 !important;
-}
-
-@mixin paragraph-reset {
-  line-height: 1.6;
-  margin-bottom: 0 !important;
-  margin-top: 0 !important;
-  padding: 0 !important;
-}
-
-.default {
-  @include card-base;
 
   &:hover {
     transform: $transform-hover-default;
   }
 
+  // Typography styles in base class
   h3 {
-    @include heading-reset;
-    color: $color-primary !important;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    margin-top: 0;
+    padding: 0;
+    color: $color-primary;
     font-size: 1.2rem;
   }
 
   p {
-    @include paragraph-reset;
-    color: $color-text-dark !important;
-  }
-}
-
-.compact {
-  padding: $padding-compact;
-
-  h3 {
-    font-size: 1rem !important;
-    margin-bottom: 0.6rem !important;
+    line-height: 1.6;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    color: $color-text-dark;
   }
 
-  p {
-    font-size: 0.9rem !important;
-    line-height: 1.4 !important;
-  }
-}
+  // Modifiers use & syntax
+  &.compact {
+    padding: $padding-compact;
 
-.highlighted {
-  background: $gradient-highlighted;
-  color: $color-white;
-  border: $border-highlighted;
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
 
-  h3 {
-    color: $color-white !important;
-  }
-
-  p {
-    color: $color-white-transparent !important;
+    p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
   }
 
-  &:hover {
-    transform: $transform-hover-highlighted;
-    box-shadow: $box-shadow-highlighted;
+  &.highlighted {
+    background: $gradient-highlighted;
+    color: $color-white;
+    border: $border-highlighted;
+
+    h3 {
+      color: $color-white;
+    }
+
+    p {
+      color: $color-white-transparent;
+    }
+
+    &:hover {
+      transform: $transform-hover-highlighted;
+      box-shadow: $box-shadow-highlighted;
+    }
   }
 }

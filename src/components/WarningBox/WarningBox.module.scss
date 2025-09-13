@@ -8,16 +8,12 @@ $border-radius: 8px;
 $margin: 1.5rem 0;
 $border-left-width: 4px;
 
-// Import shared mixin (if we had a shared file)
-@mixin warning-box-base($bg-color, $border-color, $accent-color) {
-  background-color: $bg-color;
-  border: 1px solid $border-color;
-  border-left: $border-left-width solid $accent-color;
+// Direct styles instead of single-use mixin
+.warningBox {
+  background-color: $color-bg;
+  border: 1px solid $color-border;
+  border-left: $border-left-width solid $color-border-left;
   padding: $padding;
   border-radius: $border-radius;
   margin: $margin;
-}
-
-.warningBox {
-  @include warning-box-base($color-bg, $color-border, $color-border-left);
 }

@@ -9,7 +9,7 @@ interface FeatureCardProps {
 }
 
 export default function FeatureCard({ children, flavour = 'default' }: FeatureCardProps) {
-  let classes = styles.default;
+  let classes = styles.featureCard;
 
   if (flavour && flavour !== 'default') {
     classes += ` ${styles[flavour]}`;
