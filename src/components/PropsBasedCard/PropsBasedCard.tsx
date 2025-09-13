@@ -7,20 +7,18 @@ interface PropsBasedCardProps {
   emoji: string;
   title: string;
   description: string;
-  flavour?: 'default' | 'compact' | 'highlighted';
+  flavour?: 'compact' | 'highlighted';
 }
 
 export default function PropsBasedCard({
   emoji,
   title,
   description,
-  flavour = 'default'
+  flavour
 }: PropsBasedCardProps) {
   const classes = clsx(
     styles.propsBasedCard,
-    {
-      [styles[flavour]]: flavour !== 'default'
-    }
+    flavour && styles[flavour]
   );
 
   return (

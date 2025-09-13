@@ -7,15 +7,13 @@ import React from 'react';
 
 interface PropsBasedGridProps {
   children: React.ReactNode;
-  flavour?: 'default' | 'compact' | 'highlighted';
+  flavour?: 'compact' | 'highlighted';
 }
 
-export default function PropsBasedGrid({ children, flavour = 'default' }: PropsBasedGridProps) {
+export default function PropsBasedGrid({ children, flavour }: PropsBasedGridProps) {
   const gridClass = clsx(
     styles.propsBasedGrid,
-    {
-      [styles[flavour]]: flavour !== 'default'
-    }
+    flavour && styles[flavour]
   );
 
   // Pass flavour down to all PropsBasedCard children

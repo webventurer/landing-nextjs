@@ -5,13 +5,12 @@ import React from 'react';
 
 interface FeatureCardProps {
   children: React.ReactNode;
-  flavour?: string;
+  flavour?: 'compact' | 'highlighted';
 }
 
-export default function FeatureCard({ children, flavour = 'default' }: FeatureCardProps) {
+export default function FeatureCard({ children, flavour }: FeatureCardProps) {
   let classes = styles.featureCard;
-
-  if (flavour && flavour !== 'default') {
+  if (flavour) {
     classes += ` ${styles[flavour]}`;
   }
 

@@ -8,11 +8,11 @@ import { groupBySequence } from '../utils';
 
 interface FeaturesGridProps {
   children: ReactNode;
-  flavour?: 'default' | 'compact' | 'highlighted';
+  flavour?: 'compact' | 'highlighted';
 }
 
-export default function FeaturesGrid({ children, flavour = 'default' }: FeaturesGridProps) {
-  const classes = flavour === 'default' ? styles.featuresGrid : `${styles.featuresGrid} ${styles[flavour]}`;
+export default function FeaturesGrid({ children, flavour }: FeaturesGridProps) {
+  const classes = flavour ? `${styles.featuresGrid} ${styles[flavour]}` : styles.featuresGrid;
   const cards = groupBySequence(children, ['h3', 'p']);
 
   return (
