@@ -4,8 +4,8 @@ import { ReactNode } from 'react';
 import clsx from 'clsx';
 
 import styles from './FeaturesGrid.module.scss';
-import FeatureCard from '../FeatureCard/FeatureCard';
-import { groupBySequence } from '../utils';
+import FeatureCard from '@/components/FeatureCard/FeatureCard';
+import { groupBySequence } from '@/components/utils';
 
 interface FeaturesGridProps {
   children: ReactNode;

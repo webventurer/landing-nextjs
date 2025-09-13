@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import styles from './PropsBasedGrid.module.scss';
-import PropsBasedCard from '../PropsBasedCard/PropsBasedCard';
+import PropsBasedCard from '@/components/PropsBasedCard/PropsBasedCard';
 import React from 'react';
 
 interface PropsBasedGridProps {

@@ -3,18 +3,18 @@
 import { MDXProvider } from '@mdx-js/react';
 
 import contentStyles from './page.module.scss';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-import FeatureCard from '../../components/FeatureCard/FeatureCard';
-import FeaturesGrid from '../../components/FeaturesGrid/FeaturesGrid';
-import CTA from '../../components/CTA/CTA';
-import InfoBox from '../../components/InfoBox/InfoBox';
-import WarningBox from '../../components/WarningBox/WarningBox';
-import SuccessBox from '../../components/SuccessBox/SuccessBox';
-import HighlightBox from '../../components/HighlightBox/HighlightBox';
-import Section from '../../components/Section/Section';
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
+import FeatureCard from '@/components/FeatureCard/FeatureCard';
+import FeaturesGrid from '@/components/FeaturesGrid/FeaturesGrid';
+import CTA from '@/components/CTA/CTA';
+import InfoBox from '@/components/InfoBox/InfoBox';
+import WarningBox from '@/components/WarningBox/WarningBox';
+import SuccessBox from '@/components/SuccessBox/SuccessBox';
+import HighlightBox from '@/components/HighlightBox/HighlightBox';
+import Section from '@/components/Section/Section';
 
-import { withDisplayNames } from '../../components/utils';
+import { withDisplayNames } from '@/components/utils';
 
 import MDXContent from './content.mdx';
 

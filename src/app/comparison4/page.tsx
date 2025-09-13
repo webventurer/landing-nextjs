@@ -1,9 +1,9 @@
 import contentStyles from './page.module.scss';
-import Header from '../../components/Header/Header';
-import PropsBasedGrid from '../../components/PropsBasedGrid/PropsBasedGrid';
-import PropsBasedCard from '../../components/PropsBasedCard/PropsBasedCard';
-import CTA from '../../components/CTA/CTA';
-import Footer from '../../components/Footer/Footer';
+import Header from '@/components/Header/Header';
+import PropsBasedGrid from '@/components/PropsBasedGrid/PropsBasedGrid';
+import PropsBasedCard from '@/components/PropsBasedCard/PropsBasedCard';
+import CTA from '@/components/CTA/CTA';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata = {
   title: 'React Components Comparison Page',
