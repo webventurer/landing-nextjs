@@ -51,10 +51,20 @@ This document is designed to fit into a **Product Requirements Document**.
 #### 1. React Components (TypeScript)
 
 ```tsx
-// Example: Typed component with proper props
-const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {
+// Example: Modern component with proper clsx usage
+interface FeatureCardProps {
+  title: string;
+  description: string;
+  icon: string;
+  variant?: 'featured' | 'compact';
+}
+
+const FeatureCard = ({ title, description, icon, variant }: FeatureCardProps) => {
   return (
-    <div className={styles.card}>
+    <div className={clsx(
+      styles.card,           // Base class contains default styles
+      styles[variant]        // Only apply variant if provided
+    )}>
       <div className={styles.icon}>{icon}</div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
@@ -75,26 +85,35 @@ const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {
 ```scss
 // Variables for consistency
 $color-primary: #3498db;
+$color-secondary: #2c3e50;
 $spacing-md: 1rem;
-$radius-md: 8px;
+$border-radius: 8px;
+$font-family-primary: "Poppins", sans-serif;
 
-// Mixins for reusability
-@mixin card-base {
+// Base class with modifier patterns (preferred over mixins)
+.card {
   background: white;
-  border-radius: $radius-md;
+  border-radius: $border-radius;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: $spacing-md;
-}
 
-// Nested selectors for organization
-.card {
-  @include card-base;
-
+  // Hover states
   &:hover {
     transform: translateY(-2px);
     transition: transform 0.2s ease;
   }
 
+  // Modifiers for variants
+  &.featured {
+    border: 2px solid $color-primary;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+  }
+
+  &.compact {
+    padding: $spacing-md * 0.5;
+  }
+
+  // Nested selectors for child elements
   .title {
     color: $color-primary;
     margin-bottom: $spacing-md;
@@ -106,9 +125,11 @@ $radius-md: 8px;
 
 - Use `.module.scss` extension for CSS Modules + SCSS
 - Define variables at the top of each stylesheet
-- Create mixins for reusable style patterns
-- Use nesting with `&` for pseudo-selectors and states
+- Use base classes with modifier patterns instead of mixins for shared styles
+- Apply camelCase naming for CSS classes to match TypeScript property access
+- Use nesting with `&` for pseudo-selectors, modifiers, and child elements
 - Import as: `import styles from './Component.module.scss'`
+- Use `clsx` for dynamic class name construction
 
 #### 3. Content Integration
 
@@ -204,21 +225,60 @@ $border-radius: 8px;
 $font-family-primary: "Poppins", sans-serif;
 ```
 
-#### Mixins
+#### Base Classes with Modifiers (Preferred Pattern)
 
 ```scss
-@mixin button-base {
+// Modern approach: base class contains default styles
+.button {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: $border-radius;
   cursor: pointer;
   font-family: $font-family-primary;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+
+  // Modifiers for variants (avoid .button-default)
+  &.primary {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+  }
+
+  &.secondary {
+    background: transparent;
+    color: #374151;
+  }
+
+  &.small {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+```
+
+#### Limited Mixin Usage
+
+```scss
+// Only use mixins for complex, parameterized patterns
+@mixin truncate-text($lines: 1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @mixin responsive-text {
   @media (max-width: 768px) {
     font-size: 0.9rem;
   }
+}
+
+// Usage in components
+.title {
+  @include truncate-text(2);
+  @include responsive-text;
 }
 ```
 
@@ -273,14 +333,17 @@ $font-family-primary: "Poppins", sans-serif;
 - [ ] No `any` types (use `ComponentProps<'element'>` instead)
 - [ ] Components have single responsibility
 - [ ] SCSS variables are used consistently
-- [ ] Mixins are created for repeated patterns
+- [ ] Base classes contain default styles (no explicit "default" variants)
+- [ ] `clsx` is used for dynamic class name construction
 
 ### Styling Quality
 
 - [ ] CSS Modules provide namespace isolation
+- [ ] camelCase naming used for CSS classes to match TypeScript access
 - [ ] SCSS nesting is used appropriately (max 3 levels deep)
+- [ ] Base class + modifier patterns used instead of mixin bloat
 - [ ] Variables are defined for colors, spacing, and fonts
-- [ ] Responsive design is implemented with mixins
+- [ ] Responsive design is implemented with mixins (limited usage)
 - [ ] Hover states and animations are smooth
 
 ### Architecture Quality
@@ -302,6 +365,43 @@ $font-family-primary: "Poppins", sans-serif;
 ---
 
 ## Anti-Patterns to Avoid
+
+### ❌ SCSS Mixin Bloat
+
+```scss
+// DON'T: Mixins create CSS duplication
+@mixin card-base {
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.card { @include card-base; }
+.card-featured { @include card-base; border: 2px solid blue; }
+.card-compact { @include card-base; padding: 0.5rem; }
+
+// DO: Use base class with modifiers
+.card {
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+
+  &.featured { border: 2px solid blue; }
+  &.compact { padding: 0.5rem; }
+}
+```
+
+### ❌ Default Variant Classes
+
+```tsx
+// DON'T: Create explicit "default" variants
+<Button variant="default">Standard</Button>
+<div className="card card-default">Content</div>
+
+// DO: Put default styles in base class
+<Button>Standard</Button>  {/* Base .button class IS the default */}
+<div className="card">Content</div>
+```
 
 ### ❌ Tailwind CSS in JSX
 
