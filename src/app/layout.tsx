@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Landing Pages - Comparison Demo",
-  description: "A Next.js project showcasing different landing page implementations and design comparisons",
+  title: "Landing Page Patterns - Next.js Showcase",
+  description: "Compare different architectural patterns for building landing pages with Next.js, React, and modern CSS",
 };
 
 export default function RootLayout({

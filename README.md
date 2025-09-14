@@ -1,6 +1,16 @@
-# Goal of this project
+# Landing Page Patterns with Next.js
 
-In this next.js project we showcase the different ways to create a web page so we can see which approach we prefer.
+A comprehensive Next.js project showcasing **5 different architectural patterns** for building landing pages. Compare approaches ranging from static HTML to modern React components with MDX integration.
+
+## Project Purpose
+
+This repository demonstrates various ways to create landing pages, helping developers choose the best approach for their specific needs:
+
+1. **Static HTML** - Pure HTML/CSS approach
+2. **Basic React Components** - Simple component-based structure
+3. **Props-based Architecture** - Reusable components with props
+4. **MDX Integration** - Markdown with React components
+5. **Advanced Patterns** - Modern CSS-in-JS and contextual styling
 
 ## Getting started
 
