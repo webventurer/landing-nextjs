@@ -1,4 +1,6 @@
-# Frontend Architecture Requirements (Document)
+# Frontend architecture requirements (document)
+
+> **AI Assistant Note**: When frontend architecture, CSS patterns, or component design are discussed, always reference this document first and acknowledge consulting it before providing architectural guidance.
 
 This document is designed to fit into a **Product Requirements Document**.
 
@@ -30,16 +32,16 @@ This document is designed to fit into a **Product Requirements Document**.
 - **Implementation**: Use CSS Modules for automatic scoping
 - **Quote**: _"Namespaces are one honking great idea -- let's do more of those!"_ — Tim Peters, The Zen of Python
 
-### 4. Reusability & DRY
+### 4. CSS inheritance over abstraction
 
-- **Principle**: Write code once, use everywhere
-- **Implementation**: Create reusable React components and SCSS mixins
-- **Benefit**: Reduces maintenance burden and ensures consistency
+- **Principle**: Leverage CSS's natural cascade and inheritance instead of SCSS abstractions
+- **Implementation**: Use base classes with modifiers rather than mixins or placeholders
+- **Benefit**: Smaller bundle sizes, better maintainability, and natural CSS behavior
 
 ### 5. Maintainability
 
 - **Principle**: Code should be easy to modify, extend, and debug
-- **Implementation**: Use variables, mixins, and modular architecture
+- **Implementation**: Use CSS inheritance patterns, contextual styling, and modular architecture
 - **Goal**: Make future developer's life easier (especially if future developer is YOU!)
 
 ---
@@ -51,7 +53,7 @@ This document is designed to fit into a **Product Requirements Document**.
 #### 1. React Components (TypeScript)
 
 ```tsx
-// Example: Modern component with proper clsx usage
+// Example: Modern component with contextual styling
 interface FeatureCardProps {
   title: string;
   description: string;
@@ -65,9 +67,9 @@ const FeatureCard = ({ title, description, icon, variant }: FeatureCardProps) =>
       styles.card,           // Base class contains default styles
       styles[variant]        // Only apply variant if provided
     )}>
-      <div className={styles.icon}>{icon}</div>
-      <h3 className={styles.title}>{title}</h3>
-      <p className={styles.description}>{description}</p>
+      <div className={styles.iconWrapper}>{icon}</div>
+      <h3>{title}</h3>
+      <p>{description}</p>
     </div>
   );
 };
@@ -113,10 +115,21 @@ $font-family-primary: "Poppins", sans-serif;
     padding: $spacing-md * 0.5;
   }
 
-  // Nested selectors for child elements
-  .title {
+  // Contextual styling for nested elements
+  .iconWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-md * 0.5;
+  }
+
+  h3 {
     color: $color-primary;
-    margin-bottom: $spacing-md;
+    margin-bottom: $spacing-md * 0.5;
+  }
+
+  p {
+    color: $color-secondary;
+    line-height: 1.6;
   }
 }
 ```
@@ -140,9 +153,8 @@ $font-family-primary: "Poppins", sans-serif;
 import { MDXProvider } from "@mdx-js/react";
 import MDXContent from "./content.mdx";
 
+// Use contextual styling - no tag-mirroring class names needed
 const components = {
-  h1: (props) => <h1 className={styles.h1} {...props} />,
-  p: (props) => <p className={styles.paragraph} {...props} />,
   FeatureCard,
   CTA,
 };
@@ -181,6 +193,40 @@ export default function Page() {
 - Maintain separation between content and presentation
 - Allow structured content authoring
 - Enable component reusability across content
+- Use contextual styling for markdown elements within containers
+
+**Example contextual styling for markdown content:**
+
+```scss
+// page.module.scss - Contextual styling instead of tag-mirroring classes
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  // Style elements based on context, not explicit class names
+  h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin: 2rem 0 1rem;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+
+  // Custom components maintain their own styling
+  // No need for explicit className assignments
+}
+```
 
 ---
 
@@ -342,6 +388,7 @@ $font-family-primary: "Poppins", sans-serif;
 - [ ] camelCase naming used for CSS classes to match TypeScript access
 - [ ] SCSS nesting is used appropriately (max 3 levels deep)
 - [ ] Base class + modifier patterns used instead of mixin bloat
+- [ ] Contextual styling used instead of tag-mirroring class names
 - [ ] Variables are defined for colors, spacing, and fonts
 - [ ] Responsive design is implemented with mixins (limited usage)
 - [ ] Hover states and animations are smooth
@@ -365,6 +412,22 @@ $font-family-primary: "Poppins", sans-serif;
 ---
 
 ## Anti-Patterns to Avoid
+
+### ❌ CSS class names that mirror HTML tags
+
+```tsx
+// DON'T: Create class names identical to tag names
+<h1 className={pageStyles.h1}>Title</h1>
+<h2 className={pageStyles.h2}>Subtitle</h2>
+<p className={pageStyles.paragraph}>Content</p>
+
+// DO: Use contextual styling with CSS cascade
+<div className={pageStyles.content}>
+  <h1>Title</h1>
+  <h2>Subtitle</h2>
+  <p>Content paragraph</p>
+</div>
+```
 
 ### ❌ SCSS Mixin Bloat
 
